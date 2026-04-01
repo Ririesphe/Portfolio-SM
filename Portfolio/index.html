@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siphelele Malotana | ICT Graduate | IT Support & Developer</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="light-mode">
+
+<header>
+  <nav>
+    <h2 class="logo">SM</h2>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i> Dark Mode</button>
+      <div class="cv-dropdown">
+        <button class="cv-btn"><i class="fas fa-file-alt"></i> CV Options ▾</button>
+        <div class="cv-menu">
+          <a href="cv/S.Malotana-Cv.pdf" target="_blank">View CV</a>
+          <a href="cv/S.Malotana-Cv.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>Hi, I'm Siphelele Malotana.</h1>
+      <p class="tagline" id="typing-text">
+ICT Graduate • Junior Full-Stack Developer • IT Support Associate • Google IT Support Certified
+</p>
+      <p class="hero-desc">I build modern software systems, web applications, and intelligent solutions that solve real-world problems. I specialize in creating practical and user-focused digital systems.</p>
+      <button onclick="scrollToProjects()">View My Work</button>
+    </div>
+    <div class="hero-image">
+      <img src="images/image-about.jpeg">
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>I am an ICT graduate based in Cape Town with a strong interest in software development, AI-powered systems, and digital innovation.</p>
+      <p>My experience includes building applications using Java, Python, SQL, and modern web technologies. I enjoy solving problems through technology and building systems that improve everyday processes.</p>
+      <div class="quick-facts">
+        <div class="fact-card"><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</div>
+        <div class="fact-card"><i class="fas fa-graduation-cap"></i> ICT Graduate</div>
+        <div class="fact-card"><i class="fas fa-certificate"></i> CPUT Final Year Experience Programme (FYEP)</div>
+        <div class="fact-card"><i class="fas fa-certificate"></i> Google IT Support Certified</div>
+      </div>
+    </div>
+    <div class="about-image">
+      <img src="images/image.jpeg" alt="Siphelele Malotana">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- History Section -->
+<section id="history" class="section">
+  <h2>History</h2>
+
+  <ul class="history-tree">
+    <!-- Diploma (latest) -->
+    <li class="right">
+      <span>
+        <i class="fas fa-graduation-cap"></i> <strong>CPUT Diploma in ICT: Application Development</strong>
+        <small>2023 – 2025</small>
+        <p>Tertiary institution was <strong>Cape Peninsula University of Technology</strong>, where I completed my Diploma in ICT with a focus on Application Development. Learned software design, coding, and database management, with projects in Java, Python, and web technologies.</p>
+      </span>
+    </li>
+
+    <!-- Higher Certificate -->
+    <li class="left">
+      <span>
+        <i class="fas fa-certificate"></i> <strong>CPUT Higher Certificate in ICT</strong>
+        <small>2022</small>
+        <p>Completed foundational studies in Information and Communication Technology, covering computer fundamentals, networking, and programming basics, preparing me for higher diploma coursework.</p>
+      </span>
+    </li>
+
+    <!-- Google IT Support Certificate -->
+    <li class="right">
+      <span>
+        <i class="fas fa-certificate"></i> <strong>Google IT Support Certificate</strong>
+        <small>April 2021 – March 2022</small>
+        <p>Enhanced with <strong>International Youth Foundation PTS Traveler training</strong> and <strong>SkillzBook's Critical Thinking</strong>, covering technical support, troubleshooting, and IT fundamentals.</p>
+      </span>
+    </li>
+
+    <!-- Volunteer Experience -->
+    <li class="left">
+      <span>
+        <i class="fas fa-hands-helping"></i> <strong>Zeenash Media Volunteer</strong>
+        <small>Dec 2020 – June 2021</small>
+        <p>Assisted with IT troubleshooting, administrative tasks, and project collaboration for media initiatives, gaining hands-on experience in problem-solving and teamwork.</p>
+      </span>
+    </li>
+
+    <!-- High School -->
+    <li class="right">
+      <span>
+        <i class="fas fa-school"></i> <strong>Thozamisa Senior Secondary School</strong>
+        <small>2020</small>
+        <p>National Senior Certificate, Grade 12. Completed foundational education with focus on core subjects, preparing for higher studies in ICT.</p>
+      </span>
+    </li>
+  </ul>
+</section>
+
+
+
+
+<section id="skills" class="section skills-section">
+  <h2>Tech Stack</h2>
+
+  <div class="hex-grid">
+
+    <!-- Frontend -->
+    <div class="hex"><div class="hex-inner"><i class="fab fa-html5"></i><span>HTML</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-css3-alt"></i><span>CSS</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-js-square"></i><span>JavaScript</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-react"></i><span>React</span></div></div>
+
+    <!-- Backend -->
+    <div class="hex"><div class="hex-inner"><i class="fab fa-node-js"></i><span>Node.js</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-php"></i><span>PHP</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-java"></i><span>Java</span></div></div>
+
+    <!-- Database -->
+    <div class="hex"><div class="hex-inner"><i class="fas fa-database"></i><span>SQL</span></div></div>
+
+    <!-- Other -->
+    <div class="hex"><div class="hex-inner"><i class="fab fa-python"></i><span>Python</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fab fa-git-alt"></i><span>Git</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fas fa-code"></i><span>APIs</span></div></div>
+    <div class="hex"><div class="hex-inner"><i class="fas fa-pencil-ruler"></i><span>Figma</span></div></div>
+
+  </div>
+</section>
+
+
+<!-- Soft Skills -->
+<div class="soft-skills-section">
+  <h2>Soft Skills</h2>
+
+  <div class="soft-skills-grid">
+
+    <div class="soft-card">
+      <i class="fas fa-lightbulb"></i>
+      <p>Problem Solving</p>
+    </div>
+
+    <div class="soft-card">
+      <i class="fas fa-users"></i>
+      <p>Teamwork</p>
+    </div>
+
+    <div class="soft-card">
+      <i class="fas fa-comments"></i>
+      <p>Communication</p>
+    </div>
+
+    <div class="soft-card">
+      <i class="fas fa-sync-alt"></i>
+      <p>Adaptability</p>
+    </div>
+
+    <div class="soft-card">
+      <i class="fas fa-clock"></i>
+      <p>Time Management</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <!-- Project 1: Plumbing Website -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/plumbling.png" alt="Plumbing Website">
+      </div>
+
+      <h3>Plumbing Business Website</h3>
+      <p>Professional business website designed for a plumbing service, featuring service listings, contact forms, and a modern responsive layout.</p>
+
+      <p class="tech">Tech: HTML • CSS • JavaScript</p>
+
+      <div class="project-buttons">
+        <a href="#" target="_blank" class="project-btn">
+          <i class="fas fa-code"></i> View Code
+        </a>
+        <a href="#" target="_blank" class="project-btn">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2: Weather Alert -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/wise.png" alt="Weather Alert App">
+      </div>
+
+      <h3>Weather Alert Web Application</h3>
+      <p>A responsive weather alert website focusing on the Cape regions only. Provides real-time weather updates and alerts for users in Cape Town and surrounding areas.</p>
+
+      <br>
+      <p class="tech">Tech: HTML • CSS • JavaScript • API</p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/yourusername/weather-app" target="_blank" class="project-btn">
+          <i class="fas fa-code"></i> View Code
+        </a>
+
+     <a href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" class="project-btn">
+        <i class="fas fa-eye"></i> Live Demo
+    </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="contact-cards">
+    <a href="mailto:ririemalotana@gmail.com" class="contact-card email">
+      <i class="fas fa-envelope"></i>
+      <span>Email</span>
+    </a>
+    <a href="https://github.com/Ririesphe" target="_blank" class="contact-card github">
+      <i class="fab fa-github"></i>
+      <span>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" class="contact-card linkedin">
+      <i class="fab fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Siphelele Malotana</p>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
