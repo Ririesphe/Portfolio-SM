@@ -64,6 +64,9 @@ filterButtons.forEach(button => {
     });
 });
 
+// Note: Project buttons are now standard <a> tags and handle their own links.
+
+
 // =========================
 // BUTTON RIPPLE EFFECT
 // =========================
@@ -149,3 +152,82 @@ timelineEntries.forEach((entry, index) => {
         entry.style.transform = "translateX(0)";
     }, 200 * index);
 });
+
+// Note: Form ID is now #contact-form
+const contactForm = document.getElementById("contact-form");
+
+// =========================
+// SCROLL HELPERS
+// =========================
+function scrollToProjects() {
+    const section = document.getElementById("projects");
+    if(section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToContact() {
+    const section = document.getElementById("contact");
+    if(section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToAbout() {
+    const section = document.getElementById("about");
+    if(section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+// =========================
+// COPY EMAIL LOGIC
+// =========================
+function copyEmail(event) {
+    event.preventDefault();
+    const email = "ririemalotana@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const textSpan = document.getElementById("copy-text");
+        const originalText = textSpan.innerHTML;
+        textSpan.innerHTML = "Copied to clipboard!";
+        textSpan.style.color = "var(--primary)";
+        
+        setTimeout(() => {
+            textSpan.innerHTML = originalText;
+            textSpan.style.color = "";
+        }, 2000);
+    });
+}
+
+if(contactForm){
+    contactForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        // Change button state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = "<span>Sending...</span> <i class='fas fa-spinner fa-spin'></i>";
+        submitBtn.disabled = true;
+
+        // Collect data
+        const formData = {
+            from_name: this.querySelector('input[name="from_name"]').value,
+            reply_to: this.querySelector('input[name="reply_to"]').value,
+            subject: this.querySelector('input[name="subject"]').value,
+            message: this.querySelector('textarea[name="message"]').value
+        };
+
+        // Send via EmailJS
+        emailjs.send("service_22b95u5", "template_hbmmbkn", formData)
+        .then(() => {
+            // Success State
+            contactForm.innerHTML = `
+                <div style="text-align:center; padding:40px; color: var(--text);">
+                    <i class="fas fa-check-circle" style="font-size:50px; color:#16a34a; margin-bottom:20px; display:block;"></i>
+                    <h3 style="margin-bottom:10px;">Message Sent!</h3>
+                    <p style="opacity:0.8;">Thank you, I'll get back to you soon.</p>
+                </div>
+            `;
+        })
+        .catch((error) => {
+            console.error("EmailJS Error:", error);
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            alert("Failed to send message. Please try again later.");
+        });
+    });
+}
