@@ -1,13 +1,13 @@
 /* COLORS AND DARK MODE */
 :root{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#1e293b;
+  --bg:#f5f5f4;
+  --card:#fafaf9;
+  --text:#44403c;
   --primary:#4f46e5;
   --primary-rgb: 79, 70, 229;
   --accent:#16a34a;
-  --highlight:#0ea5e9;
-  --highlight-rgb: 14, 165, 233;
+  --highlight:#0369a1;
+  --highlight-rgb: 3, 105, 161;
 }
 
 .dark-mode{
