@@ -30,7 +30,7 @@ button{cursor:pointer;}
 header{padding:20px 10%;border-bottom:1px solid rgba(0,0,0,0.1);position:sticky;top:0;background:var(--bg);z-index:100;transition:0.3s;}
 nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
 .logo{font-size:24px;font-weight:700;color:var(--primary);}
-.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;}
 .nav-links a{font-weight:500;position:relative;transition:0.3s;}
 .nav-links a::after{content:"";position:absolute;width:0;height:2px;bottom:-4px;left:0;background:var(--highlight);transition:width 0.3s;}
 .nav-links a:hover::after{width:100%;}
@@ -38,9 +38,13 @@ nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap
 /* HAMBURGER */
 .hamburger{display:none;font-size:28px;cursor:pointer;}
 @media(max-width:900px){
-  .nav-links{flex-direction:column;position:absolute;top:65px;left:-100%;background:var(--bg);width:100%;transition:0.3s;}
+  nav { flex-wrap: nowrap; }
+  .nav-links{flex-direction:column;position:absolute;top:65px;left:-100%;background:var(--bg);width:100%;transition:0.3s;padding:20px 0;align-items:center;gap:20px;box-shadow:0 10px 15px rgba(0,0,0,0.1);}
   .nav-links.show{left:0;}
   .hamburger{display:block;}
+  .nav-buttons { flex-direction: column; width: 100%; gap: 15px; }
+  .cv-menu { position: relative; top: 10px; right: auto; box-shadow: none; background: rgba(0,0,0,0.05); }
+  body.dark-mode .cv-menu { background: rgba(255,255,255,0.05); }
 }
 
 /* CV DROPDOWN */
@@ -442,7 +446,7 @@ body.dark-mode .about-image img{
    ========================= */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
@@ -921,7 +925,6 @@ footer {
   .hero-container{flex-direction:column;text-align:center;}
   .hero-text h1{font-size:36px;}
   .hero-image img{width:200px;height:200px;}
-  nav{flex-direction:column;align-items:flex-start;}
   .section{padding:70px 5%;}
   .about-container{flex-direction:column;text-align:center;}
   .about-image img{width:200px;height:200px;margin-top:20px;}
