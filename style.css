@@ -42,12 +42,15 @@ nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap
   .nav-links{flex-direction:column;position:absolute;top:65px;left:-100%;background:var(--bg);width:100%;transition:0.3s;padding:20px 0;align-items:center;gap:20px;box-shadow:0 10px 15px rgba(0,0,0,0.1);}
   .nav-links.show{left:0;}
   .hamburger{display:block;}
-  .nav-buttons { flex-direction: column; width: 100%; gap: 15px; }
-  .cv-menu { position: relative; top: 10px; right: auto; box-shadow: none; background: rgba(0,0,0,0.05); }
-  body.dark-mode .cv-menu { background: rgba(255,255,255,0.05); }
+  .nav-actions { gap: 15px; }
+  .nav-buttons { gap: 10px; }
+  .btn-text { display: none; }
+  .cv-btn { padding: 8px 12px; }
+  .cv-menu { right: 0; min-width: 150px; }
 }
 
-/* CV DROPDOWN */
+/* NAV ACTIONS & CV DROPDOWN */
+.nav-actions { display: flex; align-items: center; gap: 25px; }
 .nav-buttons{display:flex;gap:12px;align-items:center;position:relative;}
 .cv-dropdown{position:relative;}
 .cv-menu{display:none;position:absolute;top:38px;right:0;background:var(--card);border-radius:6px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.2);}

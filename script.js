@@ -9,9 +9,9 @@ themeToggle.addEventListener("click", () => {
 
     // Change toggle text & icon
     if(body.classList.contains("dark-mode")) {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span class="btn-text">Light Mode</span>';
     } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i> <span class="btn-text">Dark Mode</span>';
     }
 });
 
