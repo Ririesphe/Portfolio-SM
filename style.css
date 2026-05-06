@@ -943,7 +943,19 @@ footer {
   .hero-btns { flex-direction: column; gap: 12px; width: 100%; }
   .hero .main-btn, .hero .sec-btn { width: 100%; padding: 12px; font-size: 16px; }
   .hero-image img, .about-image img { width: 180px; height: 180px; }
+  .section { padding: 50px 5%; }
   .section h2 { font-size: 28px; }
+  .contact-visual h2 { font-size: 32px; }
+  .projects { grid-template-columns: 1fr; }
+  .project-image { height: 180px; }
+  .hex { width: 80px; }
+  .hex i { font-size: 22px; }
+  .hex span { font-size: 12px; }
+  .history-tree li span { padding: 15px 20px; }
+  .history-tree li::before { width: 14px; height: 14px; top: 30px; left: -7px; }
+  .history-tree li.left::before, .history-tree li.right::before { left: 4px; }
+  .history-tree::before { left: 10px; }
+  .glass-form { padding: 25px; }
 }
 
 /* ANIMATIONS */
