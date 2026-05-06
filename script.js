@@ -206,7 +206,9 @@ if(contactForm){
         // Collect data
         const formData = {
             from_name: this.querySelector('input[name="from_name"]').value,
+            name: this.querySelector('input[name="from_name"]').value, // Added for template compatibility
             reply_to: this.querySelector('input[name="reply_to"]').value,
+            email: this.querySelector('input[name="reply_to"]').value, // Added for template compatibility
             subject: this.querySelector('input[name="subject"]').value,
             message: this.querySelector('textarea[name="message"]').value
         };
