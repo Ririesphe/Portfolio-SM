@@ -136,7 +136,7 @@ body.dark-mode #themeToggle:hover {
 .hero-text{max-width:550px;opacity:0;transform:translateY(20px);animation:fadeSlide 1s forwards 0.2s;}
 .hero-text h1{font-size:48px;margin-bottom:15px;}
 .tagline{color:var(--highlight);font-weight:600;margin:10px 0;font-size:18px;min-height:22px;}
-.hero-desc{opacity:0.8;margin-bottom:30px;}
+.hero-desc{opacity:1;margin-bottom:30px;}
 
 /* HERO BUTTONS */
 .hero-btns {
@@ -187,7 +187,7 @@ body.dark-mode #themeToggle:hover {
 .hero-socials a {
   font-size: 22px;
   color: var(--text);
-  opacity: 0.7;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
@@ -417,7 +417,7 @@ body.dark-mode .about-image img{
 
 .history-tree li span p {
   font-size: 15px;
-  opacity: 0.9;
+  opacity: 1;
   line-height: 1.6;
 }
 
@@ -459,7 +459,7 @@ body.dark-mode .about-image img{
 .skill-group h3 {
   font-size: 20px;
   margin-bottom: 20px;
-  opacity: 0.8;
+  opacity: 1;
   border-left: 4px solid var(--primary);
   padding-left: 15px;
   color: var(--primary);
@@ -611,7 +611,7 @@ body.dark-mode .about-image img{
 
 .project-content p {
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 1;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -708,7 +708,7 @@ body.dark-mode .project-tech-tags span {
 
 .contact-visual p {
   font-size: 16px;
-  opacity: 0.8;
+  opacity: 1;
   margin-bottom: 40px;
   max-width: 450px;
 }
@@ -835,7 +835,7 @@ body.dark-mode .glass-form {
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 8px;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .glass-form input, 
@@ -925,7 +925,7 @@ footer {
 .footer-links a {
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.7;
+  opacity: 1;
   transition: 0.3s;
 }
 
@@ -944,7 +944,7 @@ footer {
 
 .footer-bottom p {
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .footer-socials {
@@ -954,7 +954,7 @@ footer {
 
 .footer-socials a {
   font-size: 20px;
-  opacity: 0.6;
+  opacity: 1;
   transition: 0.3s;
 }
 
@@ -1034,5 +1034,5 @@ footer {
 
 .availability-note:hover {
     background: linear-gradient(135deg, rgba(var(--primary-rgb),0.15), rgba(var(--highlight-rgb),0.05));
-    color: #fff;
+    color: var(--text);
 }
