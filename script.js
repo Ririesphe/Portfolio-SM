@@ -112,8 +112,8 @@ const scrollElements = document.querySelectorAll(
 );
 
 scrollElements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
+    // el.style.opacity = "0";
+    // el.style.transform = "translateY(30px)";
     observer.observe(el);
 });
 
@@ -150,8 +150,8 @@ window.addEventListener("load", () => {
 // =========================
 const timelineEntries = document.querySelectorAll(".timeline-entry");
 timelineEntries.forEach((entry, index) => {
-    entry.style.opacity = "0";
-    entry.style.transform = "translateX(-30px)";
+    // entry.style.opacity = "0";
+    // entry.style.transform = "translateX(-30px)";
     setTimeout(() => {
         entry.style.opacity = "1";
         entry.style.transform = "translateX(0)";
