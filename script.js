@@ -1,4 +1,9 @@
 // =========================
+// EMAILJS INIT
+// =========================
+emailjs.init("D5_iZOaeAj2N1-vcU");
+
+// =========================
 // DARK MODE TOGGLE
 // =========================
 const themeToggle = document.getElementById("themeToggle");
