@@ -220,6 +220,16 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .project-tech-tags span{background:var(--card);border:1px solid var(--border);padding:3px 10px;border-radius:6px;font-size:12.5px;font-weight:500;color:var(--text)}
 body.dark-mode .project-tech-tags span{border-color:var(--border)}
 
+.project-links{display:flex;gap:10px;margin-top:18px}
+.project-links .project-btn{flex:1;justify-content:center;height:42px;padding:0 14px;border-radius:var(--radius);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background-color .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.project-links .project-btn:first-child{background:transparent;color:var(--heading);border:1px solid rgba(var(--primary-rgb),.35)}
+.dark-mode .project-links .project-btn:first-child{border-color:rgba(247,246,242,.3)}
+.project-links .project-btn:first-child:hover{border-color:var(--gold);background:rgba(185,154,99,.08)}
+.project-links .project-btn:last-child{background:var(--btn-bg);color:var(--btn-text);border:1px solid var(--btn-bg)}
+.project-links .project-btn:last-child:hover{background:var(--btn-hover);border-color:var(--btn-hover);color:var(--btn-text)}
+.project-links .project-btn:active{transform:translateY(1px)}
+.project-links .project-btn i{font-size:13px}
+
 /* ===== Contact ===== */
 .contact-section{padding:110px 10% 90px;background:var(--bg);position:relative;overflow:hidden}
 .contact-studio{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:flex-start;max-width:1200px;margin:0 auto}
@@ -617,14 +627,6 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
         <div class="project-card premium-card">
           <div class="project-image">
             <img src="images/plumbling.webp" srcset="images/plumbling-sm.webp 400w, images/plumbling.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="Plumbing Website" width="800" height="450" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/Website.git" target="_blank" class="project-btn" aria-label="View Plumbing Website Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://plumbling.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of Plumbing Website"><i
-                    class="fas fa-desktop"></i> Live Demo</a>
-              </div>
-            </div>
           </div>
           <div class="project-content">
             <span class="project-badge">Frontend UI</span>
@@ -634,6 +636,10 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
             <div class="project-tech-tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/Ririesphe/Website.git" target="_blank" class="project-btn" aria-label="View Plumbing Website Code"><i class="fas fa-code"></i> View Code</a>
+              <a href="https://plumbling.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of Plumbing Website"><i class="fas fa-desktop"></i> Live Demo</a>
+            </div>
           </div>
         </div>
 
@@ -641,14 +647,6 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
         <div class="project-card premium-card">
           <div class="project-image">
             <img src="images/wise.webp" srcset="images/wise-sm.webp 400w, images/wise.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="WeatherWise App" width="800" height="389" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/weather-app" target="_blank" class="project-btn" aria-label="View WeatherWise Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of WeatherWise App"><i
-                    class="fas fa-eye"></i> Live Demo</a>
-              </div>
-            </div>
           </div>
           <div class="project-content">
             <span class="project-badge">API Integration</span>
@@ -658,6 +656,10 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
             <div class="project-tech-tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/Ririesphe/weather-app" target="_blank" class="project-btn" aria-label="View WeatherWise Code"><i class="fas fa-code"></i> View Code</a>
+              <a href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of WeatherWise App"><i class="fas fa-eye"></i> Live Demo</a>
+            </div>
           </div>
         </div>
 
@@ -665,14 +667,6 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
         <div class="project-card premium-card">
           <div class="project-image">
             <img src="images/smarties.webp" srcset="images/smarties-sm.webp 400w, images/smarties.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="Smarties Ticket System" width="800" height="369" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/Smarties-System.git" target="_blank" class="project-btn" aria-label="View Smarties Ticket System Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://smarties-ticket-system.vercel.app" target="_blank" class="project-btn" aria-label="Live Demo of Smarties Ticket System"><i
-                    class="fas fa-desktop"></i> Live Demo</a>
-              </div>
-            </div>
           </div>
           <div class="project-content">
             <span class="project-badge">Full-Stack System</span>
@@ -681,6 +675,10 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
               interface for user authentication and managing support requests.</p>
             <div class="project-tech-tags">
               <span>Frontend</span><span>Backend</span><span>Database</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ririesphe/Smarties-System.git" target="_blank" class="project-btn" aria-label="View Smarties Ticket System Code"><i class="fas fa-code"></i> View Code</a>
+              <a href="https://smarties-ticket-system.vercel.app" target="_blank" class="project-btn" aria-label="Live Demo of Smarties Ticket System"><i class="fas fa-desktop"></i> Live Demo</a>
             </div>
           </div>
         </div>
