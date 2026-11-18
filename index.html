@@ -235,7 +235,13 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 body.dark-mode .project-tech-tags span{border-color:var(--border)}
 
 .project-links{display:flex;gap:10px;margin-top:18px}
-.project-links .project-btn{flex:1;justify-content:center;height:42px;padding:0 14px;border-radius:var(--radius);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background-color .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.project-badge i{margin-right:4px;font-size:12px}
+.project-content .project-meta{font-size:14px;font-weight:500;color:var(--heading);margin:-4px 0 10px}
+.project-links .project-btn.is-disabled{color:var(--text-soft);border-style:dashed;cursor:default;background:transparent}
+.project-links .project-btn.is-disabled:hover{border-color:rgba(var(--primary-rgb),.35);background:transparent}
+.dark-mode .project-links .project-btn.is-disabled:hover{border-color:rgba(247,246,242,.3)}
+@media(max-width:420px){.project-links{flex-direction:column}}
+.project-links .project-btn{flex:1;justify-content:center;white-space:nowrap;height:42px;padding:0 14px;border-radius:var(--radius);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:background-color .2s,color .2s,border-color .2s,transform .2s var(--ease)}
 .project-links .project-btn:first-child{background:transparent;color:var(--heading);border:1px solid rgba(var(--primary-rgb),.35)}
 .dark-mode .project-links .project-btn:first-child{border-color:rgba(247,246,242,.3)}
 .project-links .project-btn:first-child:hover{border-color:var(--gold);background:rgba(185,154,99,.08)}
@@ -771,6 +777,28 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
     <section id="projects" class="section">
       <h2>Featured Projects</h2>
       <div class="projects">
+        <!-- Professional project: MSP Dashboard (internal company system, so no public code or demo links) -->
+        <div class="project-card premium-card is-professional">
+          <div class="project-image">
+            <img src="images/msp-dashboard-placeholder.webp" srcset="images/msp-dashboard-placeholder-sm.webp 400w, images/msp-dashboard-placeholder.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="Placeholder image for the MSP Company Operations and Performance Dashboard, an internal company system" width="800" height="450" loading="lazy">
+          </div>
+          <div class="project-content">
+            <span class="project-badge"><i class="fas fa-briefcase" aria-hidden="true"></i> Professional Project · Full-Stack Development</span>
+            <h3>MSP Company Operations &amp; Performance Dashboard</h3>
+            <p class="project-meta">Mavis Strategic Partners (MSP) · Full-Stack Developer Intern</p>
+            <p>An internal business operations and performance management platform for Mavis Strategic Partners, with
+              role-specific dashboards supporting employee management, HR, finance, administration, attendance tracking
+              and performance monitoring.</p>
+            <div class="project-tech-tags">
+              <span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Supabase</span><span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <span class="project-btn is-disabled"><i class="fas fa-lock" aria-hidden="true"></i> Private Code</span>
+              <a href="#history" class="project-btn" aria-label="View my Mavis Strategic Partners experience"><i class="fas fa-briefcase"></i> View Experience</a>
+            </div>
+          </div>
+        </div>
+
         <!-- Project 1: Plumbing Website -->
         <div class="project-card premium-card">
           <div class="project-image">
