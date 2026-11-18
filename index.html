@@ -103,7 +103,9 @@ body.dark-mode #themeToggle{color:var(--text)}
 .hero-text{max-width:580px;opacity:0;transform:translateY(16px);animation:fadeSlide .9s var(--ease) forwards .15s}
 .hero-text h1{font-size:clamp(38px,4.6vw,58px);line-height:1.08;margin-bottom:18px;letter-spacing:-.015em}
 .tagline{color:var(--highlight);font-weight:500;margin:0 0 18px;font-size:16px;line-height:1.6;min-height:22px;padding-left:14px;border-left:2px solid var(--gold)}
-.hero-desc{color:var(--text-soft);font-size:17px;line-height:1.75;margin-bottom:34px}
+.hero-desc{color:var(--text-soft);font-size:17px;line-height:1.75;margin-bottom:18px}
+.hero-status{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--heading);padding:7px 14px;border:1px solid var(--border);border-radius:999px;background:var(--card);margin-bottom:30px;line-height:1.5}
+.hero-status-dot{width:8px;height:8px;flex:none;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
 .hero .main-btn,.hero .sec-btn{height:50px;padding:0 28px;border-radius:var(--radius);font-weight:600;font-size:15px;letter-spacing:.005em;transition:background-color .2s,color .2s,border-color .2s,transform .2s var(--ease),box-shadow .2s;position:relative;overflow:hidden}
 .hero .main-btn{background:var(--btn-bg);color:var(--btn-text);border:1px solid var(--btn-bg);box-shadow:0 8px 20px -12px rgba(20,36,61,.6)}
@@ -142,7 +144,6 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .fact-card{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:var(--bg);border:1px solid var(--border);font-weight:500;font-size:14px;color:var(--heading);transition:border-color .2s,background-color .2s}
 .fact-card i{color:var(--gold);font-size:13px}
 .fact-card:hover{border-color:var(--gold)}
-.availability-note{font-size:15px;font-weight:500;color:var(--heading);margin-top:8px;background:rgba(185,154,99,.1);border:1px solid rgba(185,154,99,.35);border-left:3px solid var(--gold);padding:12px 16px;border-radius:var(--radius);display:inline-block;line-height:1.6}
 
 /* ===== History (timeline) ===== */
 #history{padding:110px 10%;position:relative}
@@ -349,7 +350,8 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
   .hero{padding:48px 5%;min-height:auto}
   .hero-text h1{font-size:36px}
   .tagline{font-size:15px}
-  .hero-desc{font-size:16px;margin-bottom:28px}
+  .hero-desc{font-size:16px;margin-bottom:16px}
+  .hero-status{font-size:13px;margin-bottom:26px;text-align:left}
   .hero-btns{flex-direction:column;gap:10px;width:100%}
   .hero .main-btn,.hero .sec-btn{width:100%}
   .hero-image img{width:190px;height:190px}
@@ -413,8 +415,11 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           <p class="tagline" id="typing-text">
             ICT Graduate • Junior Full-Stack Developer • Systems Support Associate • Google IT Support Certified
           </p>
-          <p class="hero-desc">I build modern software systems, web applications, and intelligent solutions that solve
-            real-world problems. I specialize in creating practical and user-focused digital systems.</p>
+          <p class="hero-desc">I build modern software applications, business systems and intelligent digital solutions
+            that solve real-world problems. With a background in Application Development and practical experience
+            developing full-stack solutions, I enjoy turning ideas into functional, user-focused applications.</p>
+          <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span> Currently: Full-Stack
+            Developer Intern at Mavis Strategic Partners (MSP)</p>
           <div class="hero-btns">
             <button onclick="scrollToProjects()" class="main-btn">View My Work</button>
             <button onclick="scrollToContact()" class="sec-btn">Contact Me</button>
@@ -442,21 +447,25 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
       <h2>About Me</h2>
       <div class="about-container">
         <div class="about-text">
-          <p>I am an ICT graduate based in Cape Town with a strong interest in software development, AI-powered systems,
-            and digital innovation.</p>
-          <p>My experience includes building applications using Java, Python, SQL, and modern web technologies. I enjoy
-            solving problems through technology and building systems that improve everyday processes.</p>
-
-          <p class="availability-note">
-            Currently enrolled at Capaciti in an Systems Support program, also developing skills in AI engineering and modern
-            tech solutions.
-          </p>
+          <p>I am an ICT graduate based in Cape Town, South Africa, with a Diploma in ICT: Application Development from
+            Cape Peninsula University of Technology (CPUT).</p>
+          <p>My journey in technology has grown from academic application development into practical software
+            engineering experience. I currently work as a Full-Stack Developer Intern at Mavis Strategic Partners, where I
+            contribute to developing business applications, internal management systems and dashboard solutions.</p>
+          <p>My technical experience includes frontend and backend development, database integration, system
+            development and troubleshooting. I'm also interested in AI-powered applications, workflow automation and
+            exploring how emerging technologies can improve digital solutions.</p>
+          <p>Alongside my professional experience, I am continuing to strengthen my skills through Capaciti's Systems
+            Support and AI Prompting programme.</p>
+          <p>My goal is to build practical, scalable and user-focused technology solutions while continuously growing as
+            a software developer.</p>
 
           <div class="quick-facts">
             <div class="fact-card"><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</div>
-            <div class="fact-card"><i class="fas fa-graduation-cap"></i> ICT Graduate</div>
-            <div class="fact-card"><i class="fas fa-certificate"></i> CPUT Final Year Experience Programme (FYEP)</div>
+            <div class="fact-card"><i class="fas fa-graduation-cap"></i> ICT Graduate – CPUT</div>
+            <div class="fact-card"><i class="fas fa-briefcase"></i> Full-Stack Developer Intern – Mavis Strategic Partners</div>
             <div class="fact-card"><i class="fas fa-certificate"></i> Google IT Support Certified</div>
+            <div class="fact-card"><i class="fas fa-laptop-code"></i> Systems Support &amp; AI Prompting – Capaciti</div>
           </div>
         </div>
         <div class="about-image">
