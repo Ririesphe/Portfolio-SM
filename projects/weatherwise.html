@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeatherWise Web Application | Case study by Siphelele Malotana</title>
+  <meta name="description" content="Case study: WeatherWise, a responsive weather web app for Cape Town areas that uses the OpenWeatherMap API, built by Siphelele Malotana.">
+  <meta name="author" content="Siphelele Malotana">
+  <meta name="theme-color" content="#101D35">
+  <link rel="canonical" href="https://siphelelemalotanaportfolio.vercel.app/projects/weatherwise.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Siphelele Malotana">
+  <meta property="og:title" content="WeatherWise Web Application | Siphelele Malotana">
+  <meta property="og:description" content="Case study: WeatherWise, a responsive weather web app for Cape Town areas that uses the OpenWeatherMap API, built by Siphelele Malotana.">
+  <meta property="og:url" content="https://siphelelemalotanaportfolio.vercel.app/projects/weatherwise.html">
+  <meta property="og:image" content="https://siphelelemalotanaportfolio.vercel.app/images/case-weatherwise-1200.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html" aria-label="Siphelele Malotana, home">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"><i class="fas fa-moon" aria-hidden="true"></i></button>
+        <a class="btn btn-gold nav-cv" href="../cv/S.Malotana-Cv.pdf" download><i class="fas fa-arrow-down" aria-hidden="true"></i> <span class="label-long">Download CV</span><span class="label-short">CV</span></a>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li aria-current="page">WeatherWise Web Application</li>
+          </ol>
+        </nav>
+        <p class="project-category">Web application, API integration</p>
+        <h1 id="case-title">WeatherWise Web Application</h1>
+        <p class="case-summary">A responsive weather application for areas around Cape Town that turns live data from the OpenWeatherMap API into clear, plain-language updates.</p>
+        <div class="project-actions">
+          <a class="btn btn-gold" href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="btn btn-ghost-light" href="https://github.com/Ririesphe/WeatherWise-app" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View code on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <figure class="case-shot">
+        <div class="project-media">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <div class="shot">
+            <img src="../images/case-weatherwise-1200.webp" srcset="../images/case-weatherwise-720.webp 720w, ../images/case-weatherwise-1200.webp 1200w" sizes="(max-width: 1240px) 92vw, 1100px" width="1200" height="584" alt="WeatherWise showing current weather for Blouberg at 24.7°C with clear skies, a three-day forecast and a "No severe weather alerts" message" fetchpriority="high">
+          </div>
+        </div>
+        <figcaption>Current conditions for Blouberg, the three-day forecast and the weather alert status.</figcaption>
+      </figure>
+
+      <div class="case-layout">
+        <article class="case-body">
+          <section aria-labelledby="problem-title">
+            <h2 id="problem-title">The problem</h2>
+            <p>General weather apps return a lot of data, and searching by place name can return the wrong location. People in and around Cape Town need a quick, reliable way to check conditions for their own area, explained in words rather than raw numbers.</p>
+          </section>
+          <section aria-labelledby="role-title">
+            <h2 id="role-title">My role</h2>
+            <p>I designed and built WeatherWise, including the interface, the API integration and the supporting pages, and published it on Netlify.</p>
+          </section>
+          <section aria-labelledby="build-title">
+            <h2 id="build-title">How it works</h2>
+            <p>A user enters an area, and WeatherWise requests current conditions and the forecast for that location from the OpenWeatherMap API.</p>
+            <ul>
+              <li>Supports ten areas: Cape Town, Green Point, Blouberg, Table View, Claremont, Rylands, Woodstock, Constantia, Hout Bay and Stellenbosch.</li>
+              <li>Shows the current temperature and conditions with a plain-language description that adapts to the weather and time of day, such as "Expect sunny skies this afternoon."</li>
+              <li>Shows a three-day forecast built from the API's forecast data.</li>
+              <li>Flags severe conditions in an alert card, or confirms there are no severe weather alerts.</li>
+              <li>Includes About and Contact pages, sign-up for weather alerts, and a login, registration and logout flow.</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="decisions-title">
+            <h2 id="decisions-title">Technical decisions</h2>
+            <dl class="decisions">
+            <div><dt>Fixed area coordinates</dt><dd>Instead of searching by free-text place name, each supported area maps to known latitude and longitude, so results always match the right part of Cape Town.</dd></div>
+            <div><dt>Two API endpoints</dt><dd>Current conditions and the forecast come from separate OpenWeatherMap endpoints, requested with async/await and metric units.</dd></div>
+            <div><dt>Readable summaries</dt><dd>Weather conditions map to short written descriptions and icons, so the main message is understandable at a glance.</dd></div>
+            <div><dt>Error handling</dt><dd>Unsupported areas and API errors show a message instead of breaking the page.</dd></div>
+            <div><dt>Client-side accounts</dt><dd>Login and registration use the browser's local storage, keeping the project fully static for hosting.</dd></div>
+            </dl>
+          </section>
+          <section aria-labelledby="next-title">
+            <h2 id="next-title">Next steps</h2>
+            <p>To take WeatherWise further, sign-in would move to a proper authentication service instead of browser storage, and API requests would go through a small server so the API key isn't exposed in the browser.</p>
+          </section>
+        </article>
+
+        <aside class="case-aside" aria-label="Project details">
+          <div class="facts">
+            <h2 class="visually-hidden">Project details</h2>
+            <dl>
+              <div><dt>Project type</dt><dd>Web application</dd></div>
+              <div><dt>My role</dt><dd>Design and development</dd></div>
+              <div><dt>Hosting</dt><dd>Netlify</dd></div>
+              <div><dt>Technologies</dt><dd><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>REST API</li><li>OpenWeatherMap</li><li>Local storage</li></ul></dd></div>
+            </dl>
+            <div class="aside-links">
+              <a class="btn btn-navy" href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="btn btn-outline" href="https://github.com/Ririesphe/WeatherWise-app" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View code on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-nav" aria-label="More projects">
+        <a href="plumbing-website.html"><span>Previous project</span><strong>Plumbing Business Website</strong></a>
+        <a class="next" href="smarties-ticket-system.html"><span>Next project</span><strong>Smarties Ticket System</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="../index.html" aria-label="Siphelele Malotana, home">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/Ririesphe" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:ririemalotana@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <p>© <span id="year">2026</span> Siphelele Malotana</p>
+    </div>
+  </footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <script src="../script.js" defer></script>
+</body>
+</html>

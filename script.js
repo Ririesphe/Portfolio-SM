@@ -1,240 +1,218 @@
-// =========================
-// EMAILJS INIT
-// =========================
-emailjs.init("D5_iZOaeAj2N1-vcU");
+/* =========================================================
+   Siphelele Malotana — Portfolio scripts
+   Shared by the homepage and project case-study pages.
+   Every block checks its elements exist, so pages can omit them.
+   ========================================================= */
+(function () {
+  "use strict";
 
-// =========================
-// DARK MODE TOGGLE
-// =========================
-const themeToggle = document.getElementById("themeToggle");
-const body = document.body;
+  const root = document.documentElement;
 
-themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
+  /* ---------- Theme toggle (saved between visits) ---------- */
+  const themeToggle = document.getElementById("theme-toggle");
 
-    // Change toggle text & icon
-    if(body.classList.contains("dark-mode")) {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span class="btn-text">Light Mode</span>';
-    } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i> <span class="btn-text">Dark Mode</span>';
+  function applyTheme(theme) {
+    const dark = theme === "dark";
+    if (dark) root.setAttribute("data-theme", "dark");
+    else root.removeAttribute("data-theme");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      themeToggle.innerHTML = dark
+        ? '<i class="fas fa-sun" aria-hidden="true"></i>'
+        : '<i class="fas fa-moon" aria-hidden="true"></i>';
     }
-});
+  }
 
-// =========================
-// NAV HAMBURGER MENU
-// =========================
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+  if (themeToggle) {
+    applyTheme(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+    themeToggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try { localStorage.setItem("theme", next); } catch (e) { /* storage unavailable */ }
+    });
+  }
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
+  /* ---------- Mobile menu ---------- */
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-// =========================
-// PROJECT FILTER SYSTEM
-// =========================
-const filterButtons = document.querySelectorAll(".filter-buttons button");
-const projects = document.querySelectorAll(".project-card");
+  function setMenu(open) {
+    if (!menuToggle || !navLinks) return;
+    navLinks.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menuToggle.innerHTML = open
+      ? '<i class="fas fa-xmark" aria-hidden="true"></i>'
+      : '<i class="fas fa-bars" aria-hidden="true"></i>';
+  }
 
-// Smooth transition
-projects.forEach(project => {
-    project.style.transition = "all 0.4s ease";
-});
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => setMenu(!navLinks.classList.contains("is-open")));
+    navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navLinks.classList.contains("is-open")) {
+        setMenu(false);
+        menuToggle.focus();
+      }
+    });
+    document.addEventListener("click", (e) => {
+      if (navLinks.classList.contains("is-open") && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) setMenu(false);
+    });
+    window.matchMedia("(min-width: 961px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
+  }
 
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        // Active button
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
+  /* ---------- Header shadow + back-to-top ---------- */
+  const header = document.querySelector(".site-header");
+  const backToTop = document.getElementById("back-to-top");
 
-        const filter = button.getAttribute("data-filter");
+  function onScroll() {
+    const y = window.scrollY;
+    if (header) header.classList.toggle("is-scrolled", y > 8);
+    if (backToTop) backToTop.classList.toggle("is-visible", y > 600);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-        projects.forEach(project => {
-            const category = project.getAttribute("data-category");
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      const target = document.getElementById("main");
+      if (target) { target.setAttribute("tabindex", "-1"); target.focus({ preventScroll: true }); }
+    });
+  }
 
-            if(filter === "all" || filter === category){
-                project.style.display = "flex";
-                setTimeout(() => {
-                    project.style.opacity = "1";
-                    project.style.transform = "translateY(0) scale(1)";
-                }, 50);
-            } else {
-                project.style.opacity = "0";
-                project.style.transform = "translateY(20px) scale(0.95)";
-                setTimeout(() => {
-                    project.style.display = "none";
-                }, 300);
-            }
+  /* ---------- Current-section highlight in the nav ---------- */
+  if (navLinks && "IntersectionObserver" in window) {
+    const links = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+    const sections = links
+      .map((a) => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((a) => {
+          if (a.getAttribute("href") === "#" + entry.target.id) a.setAttribute("aria-current", "true");
+          else a.removeAttribute("aria-current");
         });
-    });
-});
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
 
-// Note: Project buttons are now standard <a> tags and handle their own links.
+    sections.forEach((s) => spy.observe(s));
+  }
 
-
-// =========================
-// BUTTON RIPPLE EFFECT
-// =========================
-const buttons = document.querySelectorAll(".btn, .project-btn, .hero button");
-
-buttons.forEach(btn => {
-    btn.addEventListener("click", function(e){
-        const circle = document.createElement("span");
-        const diameter = Math.max(this.clientWidth, this.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - this.offsetLeft - radius}px`;
-        circle.style.top = `${e.clientY - this.offsetTop - radius}px`;
-        circle.classList.add("ripple");
-
-        const ripple = this.getElementsByClassName("ripple")[0];
-        if(ripple){ ripple.remove(); }
-
-        this.appendChild(circle);
-    });
-});
-
-// =========================
-// SCROLL REVEAL ANIMATION
-// =========================
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, { threshold: 0.2 });
-
-const scrollElements = document.querySelectorAll(
-    ".project-card, .timeline-entry, .skill, .soft-skill, .fact-card, .hero-text"
-);
-
-scrollElements.forEach(el => {
-    // el.style.opacity = "0";
-    // el.style.transform = "translateY(30px)";
-    observer.observe(el);
-});
-
-// =========================
-// BACK TO TOP BUTTON
-// =========================
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 400){
-        backToTop.style.display = "block";
-    } else {
-        backToTop.style.display = "none";
-    }
-});
-
-backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// =========================
-// HERO TEXT ANIMATION
-// =========================
-window.addEventListener("load", () => {
-    const heroText = document.querySelector(".hero-text");
-    if(heroText){
-        heroText.style.opacity = "1";
-        heroText.style.transform = "translateY(0)";
-    }
-});
-
-// =========================
-// TIMELINE BRANCH ANIMATION
-// =========================
-const timelineEntries = document.querySelectorAll(".timeline-entry");
-timelineEntries.forEach((entry, index) => {
-    // entry.style.opacity = "0";
-    // entry.style.transform = "translateX(-30px)";
-    setTimeout(() => {
-        entry.style.opacity = "1";
-        entry.style.transform = "translateX(0)";
-    }, 200 * index);
-});
-
-// Note: Form ID is now #contact-form
-const contactForm = document.getElementById("contact-form");
-
-// =========================
-// SCROLL HELPERS
-// =========================
-function scrollToProjects() {
-    const section = document.getElementById("projects");
-    if(section) section.scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToContact() {
-    const section = document.getElementById("contact");
-    if(section) section.scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToAbout() {
-    const section = document.getElementById("about");
-    if(section) section.scrollIntoView({ behavior: 'smooth' });
-}
-
-// =========================
-// COPY EMAIL LOGIC
-// =========================
-function copyEmail(event) {
-    event.preventDefault();
-    const email = "ririemalotana@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-        const textSpan = document.getElementById("copy-text");
-        const originalText = textSpan.innerHTML;
-        textSpan.innerHTML = "Copied to clipboard!";
-        textSpan.style.color = "var(--primary)";
-        
+  /* ---------- Copy email ---------- */
+  document.querySelectorAll(".copy-btn[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const value = btn.getAttribute("data-copy");
+      const label = btn.querySelector(".copy-label");
+      try {
+        await navigator.clipboard.writeText(value);
+        btn.classList.add("is-copied");
+        if (label) label.textContent = "Copied";
+        btn.setAttribute("aria-label", "Email address copied");
         setTimeout(() => {
-            textSpan.innerHTML = originalText;
-            textSpan.style.color = "";
+          btn.classList.remove("is-copied");
+          if (label) label.textContent = "Copy";
+          btn.setAttribute("aria-label", "Copy email address");
         }, 2000);
+      } catch (e) {
+        window.location.href = "mailto:" + value;
+      }
     });
-}
+  });
 
-if(contactForm){
-    contactForm.addEventListener("submit", function(e){
-        e.preventDefault();
+  /* ---------- Contact form (EmailJS) ---------- */
+  const EMAILJS_PUBLIC_KEY = "D5_iZOaeAj2N1-vcU";
+  const EMAILJS_SERVICE = "service_22b95u5";
+  const EMAILJS_TEMPLATE = "template_hbmmbkn";
 
-        // Change button state
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = "<span>Sending...</span> <i class='fas fa-spinner fa-spin'></i>";
-        submitBtn.disabled = true;
+  const contactForm = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
 
-        // Collect data
-        const formData = {
-            from_name: this.querySelector('input[name="from_name"]').value,
-            name: this.querySelector('input[name="from_name"]').value, // Added for template compatibility
-            reply_to: this.querySelector('input[name="reply_to"]').value,
-            email: this.querySelector('input[name="reply_to"]').value, // Added for template compatibility
-            subject: this.querySelector('input[name="subject"]').value,
-            message: this.querySelector('textarea[name="message"]').value
-        };
+  function setStatus(msg, isError) {
+    if (!status) return;
+    status.textContent = msg;
+    status.classList.toggle("is-error", !!isError);
+  }
 
-        // Send via EmailJS
-        emailjs.send("service_22b95u5", "template_hbmmbkn", formData)
+  function validate(form) {
+    let firstInvalid = null;
+    form.querySelectorAll("input, textarea").forEach((el) => {
+      const ok = el.checkValidity() && el.value.trim() !== "";
+      el.setAttribute("aria-invalid", String(!ok));
+      if (!ok && !firstInvalid) firstInvalid = el;
+    });
+    return firstInvalid;
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("input", (e) => {
+      if (e.target.getAttribute("aria-invalid") === "true" && e.target.checkValidity() && e.target.value.trim()) {
+        e.target.setAttribute("aria-invalid", "false");
+      }
+    });
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const invalid = validate(this);
+      if (invalid) {
+        const label = this.querySelector('label[for="' + invalid.id + '"]');
+        const name = label ? label.textContent.toLowerCase() : "this field";
+        setStatus(invalid.type === "email" && invalid.value.trim()
+          ? "Enter a valid email address, like name@example.com."
+          : "Add your " + name + " to send the message.", true);
+        invalid.focus();
+        return;
+      }
+
+      if (typeof window.emailjs === "undefined") {
+        setStatus("The form couldn't load. Email me directly at ririemalotana@gmail.com.", true);
+        return;
+      }
+
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      setStatus("");
+
+      const name = this.from_name.value.trim();
+      const email = this.reply_to.value.trim();
+      const formData = {
+        from_name: name,
+        name: name,            // kept for EmailJS template compatibility
+        reply_to: email,
+        email: email,          // kept for EmailJS template compatibility
+        subject: this.subject.value.trim(),
+        message: this.message.value.trim()
+      };
+
+      window.emailjs.init(EMAILJS_PUBLIC_KEY);
+      window.emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, formData)
         .then(() => {
-            // Success State
-            contactForm.innerHTML = `
-                <div style="text-align:center; padding:40px; color: var(--text);">
-                    <i class="fas fa-check-circle" style="font-size:50px; color:#16a34a; margin-bottom:20px; display:block;"></i>
-                    <h3 style="margin-bottom:10px;">Message Sent!</h3>
-                    <p style="opacity:0.8;">Thank you, I'll get back to you soon.</p>
-                </div>
-            `;
+          contactForm.outerHTML =
+            '<div class="form-success" role="status" tabindex="-1" id="form-success">' +
+              '<i class="fas fa-circle-check" aria-hidden="true"></i>' +
+              "<h3>Message sent</h3>" +
+              "<p>Thank you for getting in touch. I'll reply to " + email.replace(/[<>&"]/g, "") + " soon.</p>" +
+            "</div>";
+          const done = document.getElementById("form-success");
+          if (done) done.focus();
         })
         .catch((error) => {
-            console.error("EmailJS Error:", error);
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-            alert("Failed to send message. Please try again later.");
+          console.error("EmailJS error:", error);
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          setStatus("The message didn't send. Try again, or email me directly at ririemalotana@gmail.com.", true);
         });
     });
-}
+  }
+
+  /* ---------- Footer year ---------- */
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();

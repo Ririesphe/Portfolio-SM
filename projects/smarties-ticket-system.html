@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smarties Ticket System | Case study by Siphelele Malotana</title>
+  <meta name="description" content="Case study: Smarties, an IT support and issue-tracking platform with AI ticket classification, built with Python, Flask and Firebase by Siphelele Malotana.">
+  <meta name="author" content="Siphelele Malotana">
+  <meta name="theme-color" content="#101D35">
+  <link rel="canonical" href="https://siphelelemalotanaportfolio.vercel.app/projects/smarties-ticket-system.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Siphelele Malotana">
+  <meta property="og:title" content="Smarties Ticket System | Siphelele Malotana">
+  <meta property="og:description" content="Case study: Smarties, an IT support and issue-tracking platform with AI ticket classification, built with Python, Flask and Firebase by Siphelele Malotana.">
+  <meta property="og:url" content="https://siphelelemalotanaportfolio.vercel.app/projects/smarties-ticket-system.html">
+  <meta property="og:image" content="https://siphelelemalotanaportfolio.vercel.app/images/case-smarties-1200.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html" aria-label="Siphelele Malotana, home">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"><i class="fas fa-moon" aria-hidden="true"></i></button>
+        <a class="btn btn-gold nav-cv" href="../cv/S.Malotana-Cv.pdf" download><i class="fas fa-arrow-down" aria-hidden="true"></i> <span class="label-long">Download CV</span><span class="label-short">CV</span></a>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li aria-current="page">Smarties Ticket System</li>
+          </ol>
+        </nav>
+        <p class="project-category">Full-stack system, AI-assisted</p>
+        <h1 id="case-title">Smarties Ticket System</h1>
+        <p class="case-summary">An IT support and issue-tracking platform that uses AI to classify tickets and route them to the right department, with dashboards, notifications and reporting for administrators.</p>
+        <div class="project-actions">
+          <a class="btn btn-gold" href="https://smarties-ticket-system.vercel.app" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="btn btn-ghost-light" href="https://github.com/Ririesphe/Smarties_System" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View code on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <figure class="case-shot">
+        <div class="project-media">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <div class="shot">
+            <img src="../images/case-smarties-1200.webp" srcset="../images/case-smarties-720.webp 720w, ../images/case-smarties-1200.webp 1200w" sizes="(max-width: 1240px) 92vw, 1100px" width="1200" height="554" alt="Smarties System login screen with username and password fields, titled "Intelligent Support and Issue Tracking"" fetchpriority="high">
+          </div>
+        </div>
+        <figcaption>The Smarties sign-in screen. Users and administrators see different dashboards after signing in.</figcaption>
+      </figure>
+
+      <div class="case-layout">
+        <article class="case-body">
+          <section aria-labelledby="problem-title">
+            <h2 id="problem-title">The problem</h2>
+            <p>Support requests usually arrive as unstructured messages. Someone has to read each one, decide which department owns it, judge how urgent it is and pass it on. Done by hand, this is slow and inconsistent, and sensitive requests can end up with the wrong people.</p>
+            <p>Smarties automates that first step, so every ticket is classified and routed as soon as it is submitted, with administrators keeping oversight of anything sensitive.</p>
+          </section>
+          <section aria-labelledby="role-title">
+            <h2 id="role-title">My role</h2>
+            <p>I developed the application across the stack: the Flask back end and routing logic, the AI integration, the Firestore data layer, the page templates, and reporting and exports.</p>
+          </section>
+          <section aria-labelledby="build-title">
+            <h2 id="build-title">How it works</h2>
+            <p>When a user submits a ticket, the system analyses it, routes it and keeps everyone informed.</p>
+            <ul>
+              <li><strong>AI analysis:</strong> the ticket text goes to a language model through the OpenRouter API, which returns the department (IT, Finance, HR or Operations), the tone (Urgent, Friendly or Formal), a risk level and a bias flag.</li>
+              <li><strong>Automated routing:</strong> keyword rules set the department and priority, and the ticket is assigned to a team member in that department.</li>
+              <li><strong>Approval workflow:</strong> Finance and HR tickets, urgent tickets and anything flagged as high risk or potentially biased need administrator approval.</li>
+              <li><strong>Notifications:</strong> administrators, assignees and requesters receive in-app notifications, and requesters get an email confirmation.</li>
+              <li><strong>Ticket chat:</strong> each ticket has a discussion thread with file attachments.</li>
+              <li><strong>Administration:</strong> dashboards, an audit log that can restore deleted tickets, business reports with charts, CSV and PDF exports, and a governance report.</li>
+              <li><strong>Accounts:</strong> registration, login, role-based access for users and administrators, and password reset by email.</li>
+            </ul>
+          </section>
+          <section aria-labelledby="process-title">
+            <h2 id="process-title">Development process</h2>
+            <p>The system was built in stages. The automated routing engine was added as a later feature on top of ticket submission and classification, and the data layer moved from an earlier SQLite database to Firebase Firestore, with a migration route to carry existing data across.</p>
+          </section>
+
+          <section aria-labelledby="decisions-title">
+            <h2 id="decisions-title">Technical decisions</h2>
+            <dl class="decisions">
+            <div><dt>AI with a fallback</dt><dd>If the AI service is unavailable or returns an unexpected answer, the system falls back to keyword-based classification and tone detection, so tickets are always processed.</dd></div>
+            <div><dt>Human approval for sensitive tickets</dt><dd>Automation handles routine routing, while sensitive, urgent or flagged tickets wait for an administrator before work starts.</dd></div>
+            <div><dt>Flask and Jinja</dt><dd>A lightweight Python framework with server-rendered templates keeps the application straightforward to build and deploy.</dd></div>
+            <div><dt>Firebase Firestore</dt><dd>A managed cloud database replaced the original local SQLite file, which suits serverless hosting on Vercel.</dd></div>
+            <div><dt>Role-based access</dt><dd>A login decorator and role checks protect every route, so administrator pages such as audit logs and compliance reports are only available to administrators.</dd></div>
+            <div><dt>Generated reports</dt><dd>Chart.js draws report charts in the browser, and ReportLab generates downloadable PDF reports on the server.</dd></div>
+            </dl>
+          </section>
+
+        </article>
+
+        <aside class="case-aside" aria-label="Project details">
+          <div class="facts">
+            <h2 class="visually-hidden">Project details</h2>
+            <dl>
+              <div><dt>Project type</dt><dd>Full-stack web application</dd></div>
+              <div><dt>My role</dt><dd>Full-stack development</dd></div>
+              <div><dt>Hosting</dt><dd>Vercel</dd></div>
+              <div><dt>Technologies</dt><dd><ul class="tags"><li>Python</li><li>Flask</li><li>Jinja</li><li>Firebase Firestore</li><li>OpenRouter API</li><li>Chart.js</li><li>ReportLab</li><li>SMTP email</li></ul></dd></div>
+            </dl>
+            <div class="aside-links">
+              <a class="btn btn-navy" href="https://smarties-ticket-system.vercel.app" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="btn btn-outline" href="https://github.com/Ririesphe/Smarties_System" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View code on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <nav class="case-nav" aria-label="More projects">
+        <a href="weatherwise.html"><span>Previous project</span><strong>WeatherWise Web Application</strong></a>
+        <a class="next" href="plumbing-website.html"><span>Next project</span><strong>Plumbing Business Website</strong></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="../index.html" aria-label="Siphelele Malotana, home">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/Ririesphe" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:ririemalotana@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <p>© <span id="year">2026</span> Siphelele Malotana</p>
+    </div>
+  </footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <script src="../script.js" defer></script>
+</body>
+</html>

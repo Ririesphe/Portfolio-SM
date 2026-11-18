@@ -1,489 +1,544 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Siphelele Malotana — ICT Graduate, Junior Full-Stack Developer and Systems Support Associate based in Cape Town. View projects, skills, and get in touch.">
+  <title>Siphelele Malotana | ICT Graduate, Junior Software Developer &amp; Systems Support</title>
+  <meta name="description" content="Siphelele Malotana is a Cape Town ICT graduate (Diploma in ICT: Application Development, CPUT) working across software development and systems support. View projects, experience and CV.">
+  <meta name="author" content="Siphelele Malotana">
+  <meta name="theme-color" content="#101D35">
+  <link rel="canonical" href="https://siphelelemalotanaportfolio.vercel.app/">
 
-  <title>Siphelele Malotana | ICT Graduate | Systems Support &amp; Developer</title>
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Siphelele Malotana">
+  <meta property="og:title" content="Siphelele Malotana | Technology with Purpose. Solutions with Impact.">
+  <meta property="og:description" content="ICT Graduate, Junior Software Developer and Systems Support Associate based in Cape Town.">
+  <meta property="og:url" content="https://siphelelemalotanaportfolio.vercel.app/">
+  <meta property="og:image" content="https://siphelelemalotanaportfolio.vercel.app/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Siphelele Malotana, ICT Graduate and Junior Software Developer">
+  <meta property="profile:first_name" content="Siphelele">
+  <meta property="profile:last_name" content="Malotana">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Preconnect to external origins for faster resource loading -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Theme before first paint (avoids a flash when dark mode is saved) -->
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="images/portrait-480.webp" imagesrcset="images/portrait-320.webp 320w, images/portrait-480.webp 480w" imagesizes="(max-width: 860px) 300px, 400px" fetchpriority="high">
 
-  <!-- Preload the LCP hero image -->
-  <link rel="preload" as="image" imagesrcset="images/Siphelele-sm.webp 320w, images/Siphelele.webp 640w" imagesizes="(max-width: 600px) 320px, 640px" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Stylesheet -->
-  <style>
- :root{ --bg:#f5f5f4; --card:#fafaf9; --text:#44403c; --primary:#4f46e5; --primary-rgb:79,70,229; --accent:#16a34a; --highlight:#0369a1; --highlight-rgb:3,105,161; } .dark-mode{ --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --primary:#6366f1; --primary-rgb:99,102,241; --highlight:#3b82f6; --highlight-rgb:59,130,246; } *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif} body{background:var(--bg);color:var(--text);line-height:1.6;transition:0.3s;scroll-behavior:smooth;overflow-x:hidden} a{color:inherit;text-decoration:none} button{cursor:pointer} header{padding:20px 10%;border-bottom:1px solid rgba(0,0,0,0.1);position:sticky;top:0;background:var(--bg);z-index:100;transition:0.3s} nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap} .logo{font-size:24px;font-weight:700;color:var(--primary)} .nav-links{display:flex;gap:25px;list-style:none;align-items:center} .nav-links a{font-weight:500;position:relative;transition:0.3s} .nav-links a::after{content:"";position:absolute;width:0;height:2px;bottom:-4px;left:0;background:var(--highlight);transition:width 0.3s} .nav-links a:hover::after{width:100%} .hamburger{display:none;font-size:28px;cursor:pointer} @media(max-width:900px){ nav{ flex-wrap:nowrap; } .nav-links{flex-direction:column;position:absolute;top:65px;left:-100%;background:var(--bg);width:100%;transition:0.3s;padding:20px 0;align-items:center;gap:20px;box-shadow:0 10px 15px rgba(0,0,0,0.1)} .nav-links.show{left:0} .hamburger{display:block} .nav-actions{ gap:15px; } .nav-buttons{ gap:10px; } .btn-text{ display:none; } .cv-btn{ padding:8px 16px; font-size:13px; } .cv-menu{ right:0; min-width:150px; } } .nav-actions{ display:flex; align-items:center; gap:25px; } .nav-buttons{display:flex;gap:12px;align-items:center;position:relative} .cv-dropdown{position:relative} .cv-menu{ display:none; position:absolute; top:calc(100% + 10px); right:0; background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.15); border:1px solid rgba(var(--primary-rgb),0.1); min-width:160px; z-index:1000; } .cv-menu a{ display:flex; align-items:center; gap:10px; padding:12px 20px; font-size:14px; font-weight:500; transition:all 0.3s ease; } .cv-menu a:hover{ background:rgba(var(--primary-rgb),0.1); color:var(--primary); } .cv-dropdown:hover .cv-menu{display:block} .cv-btn{ background:var(--primary); color:white; padding:10px 22px; border:none; border-radius:8px; font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; box-shadow:0 4px 12px rgba(var(--primary-rgb),0.15); } .cv-btn:hover{ background:var(--highlight); transform:translateY(-2px); box-shadow:0 6px 15px rgba(var(--highlight-rgb),0.25); } .cv-btn i{ font-size:14px; } #themeToggle{ background:rgba(var(--primary-rgb),0.05); border:1px solid rgba(var(--primary-rgb),0.1); border-radius:8px; padding:10px 18px; font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:all 0.3s ease; color:var(--text); } body.dark-mode #themeToggle{ color:#fff; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1); } #themeToggle i{ font-size:14px; } #themeToggle:hover{ background:rgba(var(--primary-rgb),0.1); transform:translateY(-2px); } body.dark-mode #themeToggle:hover{ background:rgba(255,255,255,0.1); } .hero{min-height:85vh;display:flex;align-items:center;padding:80px 10%;transition:0.5s} .hero-container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:50px} .hero-text{max-width:550px;opacity:0;transform:translateY(20px);animation:fadeSlide 1s forwards 0.2s} .hero-text h1{font-size:48px;margin-bottom:15px} .tagline{color:var(--highlight);font-weight:600;margin:10px 0;font-size:18px;min-height:22px} .hero-desc{opacity:1;margin-bottom:30px} .hero-btns{ display:flex; gap:15px; margin-bottom:25px; } .hero .main-btn,.hero .sec-btn{ padding:14px 30px; border:none; border-radius:8px; font-weight:600; font-size:15px; transition:all 0.3s ease; cursor:pointer; } .hero .main-btn{ background:var(--primary); color:white; } .hero .sec-btn{ background:transparent; color:var(--primary); border:2px solid var(--primary); } .hero .main-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 15px rgba(var(--primary-rgb),0.2); } .hero .sec-btn:hover{ background:var(--primary); color:#fff; transform:translateY(-3px); } .hero-socials{ display:flex; gap:20px; margin-top:10px; } .hero-socials a{ font-size:22px; color:var(--text); opacity:1; transition:all 0.3s ease; } .hero-socials a:hover{ color:var(--primary); opacity:1; transform:translateY(-3px); } .scroll-indicator{ position:absolute; bottom:30px; left:50%; transform:translateX(-50%); cursor:pointer; z-index:10; } .scroll-indicator span{ display:block; width:26px; height:42px; border:2px solid var(--text); border-radius:20px; position:relative; opacity:0.6; } .scroll-indicator span::before{ content:''; position:absolute; top:8px; left:50%; width:4px; height:8px; background:var(--primary); margin-left:-2px; border-radius:2px; animation:scrollAnim 2s infinite; } @keyframes scrollAnim{ 0%{ transform:translateY(0); opacity:1; } 100%{ transform:translateY(15px); opacity:0; } } @media(max-width:900px){ .hero-btns{ justify-content:center; } .hero-socials{ justify-content:center; } .scroll-indicator{ display:none; } } .hero-image img{ width:320px; height:320px; border-radius:50%; object-fit:cover; object-position:top; border:4px solid rgba(var(--primary-rgb),0.1); transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; } .about-image img{ width:220px; height:auto; aspect-ratio:1/1; border-radius:20px; object-fit:cover; object-position:top; border:4px solid rgba(var(--primary-rgb),0.1); transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; } body.dark-mode .hero-image img,body.dark-mode .about-image img{ border:4px solid rgba(255,255,255,0.2); } .hero-image img:hover,.about-image img:hover{ transform:scale(1.05); box-shadow:0 15px 35px rgba(var(--primary-rgb),0.15); border-color:var(--primary); } .section{padding:100px 10%; scroll-margin-top:80px} .section h2{font-size:36px;margin-bottom:30px;color:var(--primary)} .about-container{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-top:20px} .about-text{flex:1} .about-image{flex:1;text-align:center} .quick-facts{display:flex;flex-wrap:wrap;gap:15px;margin-top:20px} .fact-card{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:var(--card);font-weight:500;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:0.4s} .fact-card i{color:var(--primary)} .fact-card:hover{ background:var(--primary); color:#fff; transform:translateY(-5px); box-shadow:0 10px 20px rgba(var(--primary-rgb),0.2); } .fact-card:hover i{color:#fff} #history{ padding:100px 10%; position:relative; overflow:hidden; } .history-tree{ position:relative; list-style:none; padding:0; margin:40px auto; max-width:1000px; } .history-tree::before{ content:''; position:absolute; left:50%; top:0; width:4px; height:100%; background:linear-gradient(to bottom,var(--primary),var(--highlight)); transform:translateX(-50%); border-radius:4px; } .history-tree li{ position:relative; width:50%; margin-bottom:50px; display:flex; justify-content:flex-end; clear:both; } .history-tree li.right{ float:right; justify-content:flex-start; margin-left:50%; text-align:left; } .history-tree li.left{ float:left; justify-content:flex-end; margin-right:50%; text-align:right; } .history-tree li span{ width:85%; background:var(--card); padding:25px 30px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border:1px solid rgba(var(--primary-rgb),0.2); transition:all 0.4s ease; position:relative; z-index:10; } .history-tree li span:hover{ transform:translateY(-8px); box-shadow:0 15px 35px rgba(var(--primary-rgb),0.12); border-color:var(--highlight); } .history-tree li::before{ content:''; position:absolute; top:25px; width:18px; height:18px; background:var(--bg); border:4px solid var(--primary); border-radius:50%; z-index:20; box-shadow:0 0 0 4px rgba(var(--primary-rgb),0.1); transition:0.3s; } .history-tree li.left::before{ right:-11px; } .history-tree li.right::before{ left:-9px; } .history-tree li:hover::before{ background:var(--primary); box-shadow:0 0 0 8px rgba(var(--primary-rgb),0.2); transform:scale(1.2); } .history-tree li span strong{ display:block; font-size:18px; color:var(--primary); margin-bottom:5px; } .history-tree li span small{ display:inline-block; background:rgba(var(--primary-rgb),0.1); color:var(--primary); padding:4px 12px; border-radius:20px; font-weight:600; font-size:13px; margin-bottom:12px; } .history-tree li span p{ font-size:15px; opacity:1; line-height:1.6; } @media (max-width:900px){ .history-tree::before{ left:20px; } .history-tree li{ width:100%; float:none; margin-left:0 !important; margin-right:0 !important; padding-left:50px; text-align:left !important; justify-content:flex-start !important; } .history-tree li.left::before,.history-tree li.right::before{ left:10px; } .history-tree li span{ width:100%; } } .skills-section,.soft-skills-section{margin:60px auto;max-width:1200px;padding:0 20px} .skills-section h2,.soft-skills-section h2{font-size:32px;font-weight:700;margin-bottom:40px;color:var(--primary);text-align:center} .skills-container{ display:flex; flex-direction:column; gap:40px; } .skill-group h3{ font-size:20px; margin-bottom:20px; opacity:1; border-left:4px solid var(--primary); padding-left:15px; color:var(--primary); } .hex-grid{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center; } .hex{position:relative;width:100px;aspect-ratio:1;clip-path:polygon(25% 6.7%,75% 6.7%,100% 50%,75% 93.3%,25% 93.3%,0 50%);background:rgba(var(--primary-rgb),0.05);display:flex;align-items:center;justify-content:center;cursor:default;transition:all 0.3s ease} .hex-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center} .hex i{font-size:28px;color:var(--primary);margin-bottom:5px} .hex span{font-size:14px;font-weight:500} .hex:hover{ background:var(--primary); color:#fff; transform:translateY(-5px) scale(1.05); box-shadow:0 10px 20px rgba(var(--primary-rgb),0.2); } .hex:hover i{color:#fff} .soft-skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px;margin-top:30px} .soft-card{background:rgba(var(--primary-rgb),0.05);padding:20px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:all 0.3s ease;cursor:default} .soft-card i{font-size:26px;color:var(--primary)} .soft-card p{font-size:14px;font-weight:500;text-align:center} .soft-card:hover{ background:var(--primary); color:#fff; transform:translateY(-5px); box-shadow:0 10px 20px rgba(var(--primary-rgb),0.2); } .soft-card:hover i{color:#fff} .projects{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin-top:20px; } .premium-card{ background:var(--card); border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border:1px solid rgba(var(--primary-rgb),0.15); overflow:hidden; opacity:0; transform:translateY(30px) scale(0.97); transition:all 0.4s ease; display:flex; flex-direction:column; } .premium-card:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(var(--primary-rgb),0.15); border-color:var(--primary); } .project-image{ position:relative; width:100%; height:220px; overflow:hidden; } .project-image img{ width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; } .premium-card:hover .project-image img{ transform:scale(1.1); } .project-overlay{ position:absolute; inset:0; background:rgba(15,23,42,0.8); backdrop-filter:blur(4px); display:flex; justify-content:center; align-items:center; opacity:0; transition:all 0.4s ease; } .premium-card:hover .project-overlay{ opacity:1; } .project-buttons{ display:flex; gap:15px; transform:translateY(20px); transition:transform 0.4s ease; } .premium-card:hover .project-buttons{ transform:translateY(0); } .project-btn{ padding:10px 20px; border-radius:8px; background:var(--primary); color:#fff; font-weight:500; font-size:14px; transition:transform 0.3s; } .project-btn:hover{ transform:scale(1.05); } .project-content{ padding:25px; display:flex; flex-direction:column; flex-grow:1; } .project-badge{ background:rgba(var(--primary-rgb),0.1); color:var(--primary); padding:4px 12px; border-radius:20px; font-size:12px; font-weight:600; align-self:flex-start; margin-bottom:12px; } .project-content h3{ font-size:20px; margin-bottom:10px; color:var(--text); } .project-content p{ font-size:14px; opacity:1; line-height:1.6; margin-bottom:20px; } .project-tech-tags{ margin-top:auto; display:flex; flex-wrap:wrap; gap:8px; } .project-tech-tags span{ background:var(--bg); border:1px solid rgba(0,0,0,0.05); padding:4px 10px; border-radius:6px; font-size:12px; font-weight:500; color:var(--highlight); } body.dark-mode .project-tech-tags span{ border-color:rgba(var(--primary-rgb),0.15); } .contact-section{ padding:100px 10% 40px; background:var(--bg); position:relative; overflow:hidden; } .contact-studio{ display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:flex-start; max-width:1200px; margin:0 auto; } .contact-visual{ text-align:left; } .status-badge{ display:inline-flex; align-items:center; gap:10px; background:rgba(22,163,74,0.1); color:#15803d; padding:6px 15px; border-radius:20px; font-size:13px; font-weight:600; margin-bottom:25px; } .pulse{ width:8px; height:8px; background:#16a34a; border-radius:50%; box-shadow:0 0 0 rgba(22,163,74,0.4); animation:pulseAnim 2s infinite; } @keyframes pulseAnim{ 0%{ box-shadow:0 0 0 0 rgba(22,163,74,0.7); } 70%{ box-shadow:0 0 0 10px rgba(22,163,74,0); } 100%{ box-shadow:0 0 0 0 rgba(22,163,74,0); } } .contact-visual h2{ font-size:42px; line-height:1.2; margin-bottom:20px; color:var(--text); background:none; -webkit-text-fill-color:initial; } .contact-visual h2 span{ color:var(--primary); } .contact-visual p{ font-size:16px; opacity:1; margin-bottom:40px; max-width:450px; } .linkedin-cta-card{ background:#0a66c2; color:#fff; padding:25px; border-radius:20px; display:flex; align-items:center; gap:20px; margin-bottom:40px; transition:all 0.3s ease; box-shadow:0 10px 25px rgba(10,102,194,0.2); } .linkedin-cta-card i{ font-size:40px; } .cta-info{ display:flex; flex-direction:column; text-align:left; flex-grow:1; } .cta-info strong{ font-size:18px; } .cta-info span{ font-size:14px; opacity:0.9; } .cta-link{ background:#fff; color:#0a66c2; padding:10px 20px; border-radius:10px; font-weight:600; font-size:14px; transition:0.3s; } .linkedin-cta-card:hover{ transform:translateY(-5px); box-shadow:0 15px 35px rgba(10,102,194,0.3); } .cta-link:hover{ background:#f3f3f3; transform:scale(1.05); } .contact-quick-links{ display:flex; flex-direction:column; gap:15px; } .q-link{ display:flex; align-items:center; gap:12px; font-size:15px; font-weight:500; transition:0.3s; } .q-link i{ width:40px; height:40px; background:var(--card); display:flex; align-items:center; justify-content:center; border-radius:10px; color:var(--primary); box-shadow:0 5px 15px rgba(0,0,0,0.05); } .q-link:hover{ color:var(--primary); transform:translateX(5px); } .contact-form-wrapper{ position:relative; } .glass-form{ background:var(--card); padding:40px; border-radius:24px; border:1px solid rgba(var(--primary-rgb),0.15); box-shadow:0 25px 50px -12px rgba(0,0,0,0.1); backdrop-filter:blur(10px); } body.dark-mode .glass-form{ background:rgba(30,41,59,0.7); border-color:rgba(255,255,255,0.05); } .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; } .form-group{ margin-bottom:20px; text-align:left; } .form-group label{ display:block; font-size:13px; font-weight:600; margin-bottom:8px; opacity:1; } .glass-form input,.glass-form textarea{ width:100%; padding:12px 16px; background:rgba(0,0,0,0.02); border:1px solid rgba(0,0,0,0.08); border-radius:12px; color:var(--text); font-size:14px; transition:all 0.3s; } body.dark-mode .glass-form input,body.dark-mode .glass-form textarea{ background:rgba(255,255,255,0.03); border-color:rgba(255,255,255,0.1); } .glass-form input:focus,.glass-form textarea:focus{ outline:none; border-color:var(--primary); background:var(--card); box-shadow:0 0 0 4px rgba(var(--primary-rgb),0.1); } .studio-btn{ width:100%; padding:16px; background:var(--primary); color:#fff; border:none; border-radius:12px; font-weight:600; display:flex; justify-content:center; align-items:center; gap:10px; cursor:pointer; transition:0.3s; margin-top:10px; } .studio-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 25px rgba(var(--primary-rgb),0.3); } @media(max-width:900px){ .contact-studio{ grid-template-columns:1fr; gap:40px; text-align:center; } .contact-visual{ text-align:center; } .contact-visual p{ margin:0 auto 30px; } .contact-quick-links{ align-items:center; } .form-row{ grid-template-columns:1fr; } } footer{ background:var(--bg); padding:40px 10% 30px; border-top:1px solid rgba(0,0,0,0.05); margin-top:20px; } .footer-container{ max-width:1200px; margin:0 auto; } .footer-top{ display:flex; justify-content:space-between; align-items:center; padding-bottom:40px; border-bottom:1px solid rgba(0,0,0,0.05); margin-bottom:30px; } .footer-links{ display:flex; gap:30px; list-style:none; } .footer-links a{ font-size:14px; font-weight:500; opacity:1; transition:0.3s; } .footer-links a:hover{ opacity:1; color:var(--primary); } .footer-bottom{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; } .footer-bottom p{ font-size:14px; opacity:1; } .footer-socials{ display:flex; gap:15px; } .footer-socials a{ font-size:20px; opacity:1; transition:0.3s; } .footer-socials a:hover{ opacity:1; color:var(--primary); transform:scale(1.1); } @media(max-width:768px){ .footer-top{ flex-direction:column; gap:20px; text-align:center; } .footer-links{ gap:15px; flex-wrap:wrap; justify-content:center; } .footer-bottom{ flex-direction:column; text-align:center; } } #backToTop{position:fixed;bottom:25px;right:25px;background:var(--primary);color:#fff;border:none;border-radius:50%;width:45px;height:45px;font-size:18px;cursor:pointer;display:none;z-index:100;transition:0.3s} #backToTop:hover{background:var(--highlight);transform:translateY(-3px)} @media(max-width:900px){ .hero-container{flex-direction:column;text-align:center} .hero-text h1{font-size:36px} .hero-image img{width:200px;height:200px} .section{padding:70px 5%} .about-container{flex-direction:column;text-align:center} .about-image img{width:200px;height:200px;margin-top:20px} .quick-facts{justify-content:center} } @media(max-width:600px){ header{ padding:15px 5%; } .hero{ padding:40px 5%; min-height:70vh; } .hero-text h1{ font-size:30px; margin-bottom:10px; } .tagline{ font-size:14px; line-height:1.5; margin-bottom:15px; } .hero-desc{ font-size:14px; margin-bottom:25px; } .hero-btns{ flex-direction:column; gap:12px; width:100%; } .hero .main-btn,.hero .sec-btn{ width:100%; padding:12px; font-size:16px; } .hero-image img,.about-image img{ width:180px; height:180px; } .section{ padding:50px 5%; } .section h2{ font-size:28px; } .contact-visual h2{ font-size:32px; } .projects{ grid-template-columns:1fr; } .project-image{ height:180px; } .hex{ width:80px; } .hex i{ font-size:22px; } .hex span{ font-size:12px; } .history-tree li span{ padding:15px 20px; } .history-tree li::before{ width:14px; height:14px; top:30px; left:-7px; } .history-tree li.left::before,.history-tree li.right::before{ left:4px; } .history-tree::before{ left:10px; } .glass-form{ padding:25px; } } @keyframes fadeSlide{to{opacity:1;transform:translate(0,0)}} .availability-note{ font-size:14px; font-weight:500; color:var(--highlight); margin-top:15px; background:rgba(var(--primary-rgb),0.05); padding:10px 15px; border-radius:10px; display:inline-block; transition:background 0.3s,color 0.3s; } .availability-note:hover{ background:linear-gradient(135deg,rgba(var(--primary-rgb),0.15),rgba(var(--highlight-rgb),0.05)); color:var(--text); }
-.project-card, .timeline-entry, .skill, .soft-skill, .fact-card, .hero-text { opacity: 0; transform: translateY(30px); }
-</style>
-
-  <!-- Google Fonts — loaded non-render-blocking -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-
-  <!-- Font Awesome — loaded non-render-blocking -->
+  <!-- Fonts and icons load without blocking render -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"></noscript>
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Siphelele Malotana",
+    "jobTitle": "ICT Graduate | Junior Software Developer | Systems Support Associate",
+    "url": "https://siphelelemalotanaportfolio.vercel.app/",
+    "image": "https://siphelelemalotanaportfolio.vercel.app/images/portrait-480.webp",
+    "email": "mailto:ririemalotana@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cape Town", "addressCountry": "ZA" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Cape Peninsula University of Technology" },
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Java", "Python", "PHP", "Node.js", "MySQL", "SQL Server", "Linux", "Networking", "Git", "APIs", "Figma", "IT Support"],
+    "sameAs": [
+      "https://www.linkedin.com/in/siphelele-malotana-21837321b",
+      "https://github.com/Ririesphe"
+    ]
+  }
+  </script>
 </head>
 
-<body class="light-mode">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <nav aria-label="Main navigation">
-      <h2 class="logo">SM</h2>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <div class="nav-buttons">
-          <button id="themeToggle" class="theme-btn" title="Toggle Theme"><i class="fas fa-moon"></i> <span class="btn-text">Dark Mode</span></button>
-          <div class="cv-dropdown">
-            <button class="cv-btn" title="View CV"><i class="fas fa-file-alt"></i> <span class="btn-text">View CV ▾</span></button>
-            <div class="cv-menu">
-              <a href="cv/S.Malotana-Cv.pdf" target="_blank"><i class="fas fa-eye"></i> View CV</a>
-              <a href="cv/S.Malotana-Cv.pdf" download><i class="fas fa-download"></i> Download CV</a>
-            </div>
-          </div>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Open navigation menu"><i class="fas fa-bars"></i></button>
-      </div>
-    </nav>
-  </header>
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="#main" aria-label="Siphelele Malotana, back to top">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
 
-  <main>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-container">
-        <div class="hero-text">
-          <h1>Hi, I'm Siphelele Malotana.</h1>
-          <p class="tagline" id="typing-text">
-            ICT Graduate • Junior Full-Stack Developer • Systems Support Associate • Google IT Support Certified
-          </p>
-          <p class="hero-desc">I build modern software systems, web applications, and intelligent solutions that solve
-            real-world problems. I specialize in creating practical and user-focused digital systems.</p>
-          <div class="hero-btns">
-            <button onclick="scrollToProjects()" class="main-btn">View My Work</button>
-            <button onclick="scrollToContact()" class="sec-btn">Contact Me</button>
-          </div>
-
-          <div class="hero-socials">
-            <a href="https://github.com/Ririesphe" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" aria-label="LinkedIn profile"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="mailto:ririemalotana@gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="images/Siphelele.webp" srcset="images/Siphelele-sm.webp 320w, images/Siphelele.webp 640w" sizes="(max-width: 600px) 320px, 640px" alt="Siphelele Malotana" width="640" height="640" fetchpriority="high">
-        </div>
-      </div>
-
-      <div class="scroll-indicator" onclick="scrollToAbout()">
-        <span></span>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-      <h2>About Me</h2>
-      <div class="about-container">
-        <div class="about-text">
-          <p>I am an ICT graduate based in Cape Town with a strong interest in software development, AI-powered systems,
-            and digital innovation.</p>
-          <p>My experience includes building applications using Java, Python, SQL, and modern web technologies. I enjoy
-            solving problems through technology and building systems that improve everyday processes.</p>
-
-          <p class="availability-note">
-            Currently enrolled at Capaciti in an Systems Support program, also developing skills in AI engineering and modern
-            tech solutions.
-          </p>
-
-          <div class="quick-facts">
-            <div class="fact-card"><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</div>
-            <div class="fact-card"><i class="fas fa-graduation-cap"></i> ICT Graduate</div>
-            <div class="fact-card"><i class="fas fa-certificate"></i> CPUT Final Year Experience Programme (FYEP)</div>
-            <div class="fact-card"><i class="fas fa-certificate"></i> Google IT Support Certified</div>
-          </div>
-        </div>
-        <div class="about-image">
-          <img src="images/siphelele-about.webp" srcset="images/siphelele-about-sm.webp 220w, images/siphelele-about.webp 440w" sizes="(max-width: 600px) 220px, 440px" alt="Siphelele Malotana" width="440" height="440" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- History Section -->
-    <section id="history" class="section">
-      <h2>History</h2>
-
-      <ul class="history-tree">
-        <!-- Current: Capaciti -->
-        <li class="left">
-          <span>
-            <i class="fas fa-microchip"></i> <strong>Capaciti: Systems Support &amp; AI Prompting</strong>
-            <small>03 March 2026 – Present</small>
-            <p>Currently enrolled in an intensive IT Support program at Capaciti, focusing on System Support and AI Prompt
-              Engineering to build advanced technical troubleshooting skills and intelligent digital solutions.</p>
-          </span>
-        </li>
-
-        <!-- Diploma (latest) -->
-        <li class="right">
-          <span>
-            <i class="fas fa-graduation-cap"></i> <strong>CPUT Diploma in ICT: Application Development</strong>
-            <small>2023 – 2025</small>
-            <p>Tertiary institution was <strong>Cape Peninsula University of Technology</strong>, where I completed my
-              Diploma in ICT with a focus on Application Development. Learned software design, coding, and database
-              management, with projects in Java, Python, and web technologies.</p>
-          </span>
-        </li>
-
-        <!-- Higher Certificate -->
-        <li class="left">
-          <span>
-            <i class="fas fa-certificate"></i> <strong>CPUT Higher Certificate in ICT</strong>
-            <small>2022</small>
-            <p>Completed foundational studies in Information and Communication Technology, covering computer fundamentals,
-              networking, and programming basics, preparing me for higher diploma coursework.</p>
-          </span>
-        </li>
-
-        <!-- Google IT Support Certificate -->
-        <li class="right">
-          <span>
-            <i class="fas fa-certificate"></i> <strong>Google IT Support Certificate</strong>
-            <small>April 2021 – March 2022</small>
-            <p>Enhanced with <strong>International Youth Foundation PTS Traveler training</strong> and
-              <strong>SkillzBook's Critical Thinking</strong>, covering technical support, troubleshooting, and IT
-              fundamentals.
-            </p>
-          </span>
-        </li>
-
-        <!-- Volunteer Experience -->
-        <li class="left">
-          <span>
-            <i class="fas fa-hands-helping"></i> <strong>Zeenash Media Volunteer</strong>
-            <small>Dec 2020 – June 2021</small>
-            <p>Assisted with IT troubleshooting, administrative tasks, and project collaboration for media initiatives,
-              gaining hands-on experience in problem-solving and teamwork.</p>
-          </span>
-        </li>
-
-        <!-- High School -->
-        <li class="right">
-          <span>
-            <i class="fas fa-school"></i> <strong>Thozamisa Senior Secondary School</strong>
-            <small>2020</small>
-            <p>National Senior Certificate, Grade 12. Completed foundational education with focus on core subjects,
-              preparing for higher studies in ICT.</p>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-
-
-
-    <section id="skills" class="section skills-section">
-      <h2>Tech Stack</h2>
-
-      <div class="skills-container">
-
-        <!-- Group 1: Development -->
-        <div class="skill-group">
-          <h3>Development</h3>
-          <div class="hex-grid">
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-html5"></i><span>HTML</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-react"></i><span>React</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-java"></i><span>Java</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-python"></i><span>Python</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-php"></i><span>PHP</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Group 2: Database & infrastructure -->
-        <div class="skill-group">
-          <h3>Database &amp; Systems</h3>
-          <div class="hex-grid">
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-database"></i><span>MySQL</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-server"></i><span>SQL Server</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-linux"></i><span>Linux</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-network-wired"></i><span>Networking</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Group 3: Tools & Certs -->
-        <div class="skill-group">
-          <h3>Professional Tools</h3>
-          <div class="hex-grid">
-            <div class="hex">
-              <div class="hex-inner"><i class="fab fa-git-alt"></i><span>Git</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-code"></i><span>APIs</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-pencil-ruler"></i><span>Figma</span></div>
-            </div>
-            <div class="hex">
-              <div class="hex-inner"><i class="fas fa-tools"></i><span>IT Support</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- Soft Skills -->
-    <div class="soft-skills-section">
-      <h2>Soft Skills</h2>
-
-      <div class="soft-skills-grid">
-
-        <div class="soft-card">
-          <i class="fas fa-lightbulb"></i>
-          <p>Problem Solving</p>
-        </div>
-
-        <div class="soft-card">
-          <i class="fas fa-users"></i>
-          <p>Teamwork</p>
-        </div>
-
-        <div class="soft-card">
-          <i class="fas fa-comments"></i>
-          <p>Communication</p>
-        </div>
-
-        <div class="soft-card">
-          <i class="fas fa-sync-alt"></i>
-          <p>Adaptability</p>
-        </div>
-
-        <div class="soft-card">
-          <i class="fas fa-clock"></i>
-          <p>Time Management</p>
-        </div>
-
-      </div>
-    </div>
-
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <div class="projects">
-        <!-- Project 1: Plumbing Website -->
-        <div class="project-card premium-card">
-          <div class="project-image">
-            <img src="images/plumbling.webp" srcset="images/plumbling-sm.webp 400w, images/plumbling.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="Plumbing Website" width="800" height="450" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/Website.git" target="_blank" class="project-btn" aria-label="View Plumbing Website Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://plumbling.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of Plumbing Website"><i
-                    class="fas fa-desktop"></i> Live Demo</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-badge">Frontend UI</span>
-            <h3>Plumbing Business Website</h3>
-            <p>Professional business website designed for a plumbing service, featuring service listings, contact forms,
-              and a modern responsive layout.</p>
-            <div class="project-tech-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: WeatherWise -->
-        <div class="project-card premium-card">
-          <div class="project-image">
-            <img src="images/wise.webp" srcset="images/wise-sm.webp 400w, images/wise.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="WeatherWise App" width="800" height="389" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/weather-app" target="_blank" class="project-btn" aria-label="View WeatherWise Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" class="project-btn" aria-label="Live Demo of WeatherWise App"><i
-                    class="fas fa-eye"></i> Live Demo</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-badge">API Integration</span>
-            <h3>WeatherWise Web Application</h3>
-            <p>A responsive weather alert website focusing on the Cape regions. Provides real-time weather updates and
-              alerts for users in Cape Town and surrounding areas.</p>
-            <div class="project-tech-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: Smarties System -->
-        <div class="project-card premium-card">
-          <div class="project-image">
-            <img src="images/smarties.webp" srcset="images/smarties-sm.webp 400w, images/smarties.webp 800w" sizes="(max-width: 600px) 400px, 800px" alt="Smarties Ticket System" width="800" height="369" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-buttons">
-                <a href="https://github.com/Ririesphe/Smarties-System.git" target="_blank" class="project-btn" aria-label="View Smarties Ticket System Code"><i
-                    class="fas fa-code"></i> View Code</a>
-                <a href="https://smarties-ticket-system.vercel.app" target="_blank" class="project-btn" aria-label="Live Demo of Smarties Ticket System"><i
-                    class="fas fa-desktop"></i> Live Demo</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-badge">Full-Stack System</span>
-            <h3>Smarties Ticket System</h3>
-            <p>An intelligent support and issue tracking platform. Streamlines helpdesk processes, offering a clean
-              interface for user authentication and managing support requests.</p>
-            <div class="project-tech-tags">
-              <span>Frontend</span><span>Backend</span><span>Database</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-      <div class="contact-studio">
-
-        <!-- Left: The Visual & Status -->
-        <div class="contact-visual">
-          <div class="status-badge">
-            <span class="pulse"></span> Available for new opportunities
-          </div>
-          <h2>Let's build something <br><span>Extraordinary</span> together.</h2>
-          <p>Have a question or a project proposal? Reach out and I'll get back to you as soon as possible.</p>
-
-          <div class="linkedin-cta-card">
-            <i class="fab fa-linkedin"></i>
-            <div class="cta-info">
-              <strong>Let's Connect</strong>
-              <span>Join my professional network</span>
-            </div>
-            <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" class="cta-link">View
-              Profile</a>
-          </div>
-
-          <div class="contact-quick-links">
-            <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" class="q-link">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn Professional</span>
-            </a>
-            <a href="mailto:ririemalotana@gmail.com" class="q-link" title="Copy Email" onclick="copyEmail(event)">
-              <i class="fas fa-envelope"></i>
-              <span id="copy-text">ririemalotana@gmail.com</span>
-            </a>
-            <a href="https://wa.me/27784003925" target="_blank" class="q-link">
-              <i class="fab fa-whatsapp"></i>
-              <span>WhatsApp Me</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-form-wrapper">
-          <form class="glass-form" id="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contact-name">Name</label>
-                <input type="text" id="contact-name" name="from_name" placeholder="Your name" required>
-              </div>
-              <div class="form-group">
-                <label for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="reply_to" placeholder="Email@example.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="contact-subject">Subject</label>
-              <input type="text" id="contact-subject" name="subject" placeholder="Project inquiry" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" rows="4" placeholder="How can I help you?" required></textarea>
-            </div>
-            <button type="submit" class="studio-btn">
-              <span>Send Message</span>
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="logo">SM</div>
-        <ul class="footer-links">
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#history">History</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <a class="btn btn-gold nav-cv" href="cv/S.Malotana-Cv.pdf" download>
+          <i class="fas fa-arrow-down" aria-hidden="true"></i>
+          <span class="label-long">Download CV</span><span class="label-short">CV</span>
+        </a>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Siphelele Malotana. Built for precision.</p>
-        <div class="footer-socials">
-          <a href="https://github.com/Ririesphe" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" aria-label="LinkedIn profile"><i
-              class="fab fa-linkedin"></i></a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-reveal">
+          <p class="availability"><span class="availability-dot" aria-hidden="true"></span> Available for graduate and entry-level roles</p>
+
+          <h1 id="hero-title">
+            <span class="hero-name">Siphelele Malotana</span>
+            <span class="hero-headline">Technology with Purpose. Solutions with Impact.</span>
+          </h1>
+
+          <ul class="hero-roles" aria-label="Roles">
+            <li>ICT Graduate</li>
+            <li>Junior Software Developer</li>
+            <li>Systems Support Associate</li>
+          </ul>
+
+          <p class="hero-intro">I am a technology professional passionate about developing practical digital solutions, supporting technology environments and using modern technologies to solve real-world problems.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#projects">View My Projects</a>
+            <a class="btn btn-ghost-light" href="cv/S.Malotana-Cv.pdf" download><i class="fas fa-arrow-down" aria-hidden="true"></i> Download My CV</a>
+          </div>
+
+          <div class="hero-links">
+            <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a href="https://github.com/Ririesphe" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a href="mailto:ririemalotana@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> ririemalotana@gmail.com</a>
+          </div>
+        </div>
+
+        <figure class="portrait">
+          <div class="portrait-frame">
+            <img src="images/portrait-480.webp" srcset="images/portrait-320.webp 320w, images/portrait-480.webp 480w" sizes="(max-width: 860px) 300px, 400px" width="480" height="600" alt="Siphelele Malotana in a grey suit outside a university building" fetchpriority="high">
+          </div>
+          <figcaption><strong>Cape Town, South Africa</strong>Diploma in ICT, CPUT</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== Credentials at a glance ===================== -->
+    <section class="credentials" aria-label="Credentials at a glance">
+      <ul class="wrap credentials-list">
+        <li><span class="cred-title">Diploma in ICT: Application Development</span><span class="cred-meta">Cape Peninsula University of Technology, 2023–2025</span></li>
+        <li><span class="cred-title">Systems Support &amp; AI Prompting</span><span class="cred-meta">Capaciti, March 2026 to present</span></li>
+        <li><span class="cred-title">Google IT Support Certificate</span><span class="cred-meta">April 2021 – March 2022</span></li>
+        <li><span class="cred-title">Final Year Experience Programme</span><span class="cred-meta">CPUT, 2025</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="about-title">About me</h2>
+          <p>Application development graduate with a grounding in IT support, building toward a career in software and systems.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="lead">I'm an ICT graduate based in Cape Town, with a Diploma in ICT: Application Development from Cape Peninsula University of Technology.</p>
+            <p>I have a strong interest in software development, AI-powered systems and digital innovation. During my studies I built applications using Java, Python, SQL and modern web technologies, and I enjoy solving problems with technology by building systems that improve everyday processes.</p>
+            <p>My path into IT started with support work: the Google IT Support Certificate and volunteering at Zeenash Media, where I helped with troubleshooting and documentation. Today I'm enrolled in Capaciti's Systems Support and AI Prompting programme, strengthening my technical troubleshooting skills while developing skills in AI engineering.</p>
+            <p>I'm looking for graduate programmes, entry-level roles, internships and learnerships where I can contribute from day one, keep learning and grow in the technology industry.</p>
+          </div>
+
+          <aside class="facts" aria-labelledby="facts-title">
+            <h3 id="facts-title">At a glance</h3>
+            <dl>
+              <div><dt>Based in</dt><dd>Cape Town, South Africa</dd></div>
+              <div><dt>Qualification</dt><dd>Diploma in ICT: Application Development, CPUT</dd></div>
+              <div><dt>Certification</dt><dd>Google IT Support Certificate</dd></div>
+              <div><dt>Currently</dt><dd>Capaciti Systems Support &amp; AI Prompting programme</dd></div>
+              <div><dt>Focus areas</dt><dd>Application development, systems support, AI tools</dd></div>
+              <div><dt>Open to</dt><dd>Graduate, entry-level, internship and learnership roles</dd></div>
+            </dl>
+          </aside>
         </div>
       </div>
+    </section>
+
+    <!-- ===================== Experience & education ===================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="experience-title">Education &amp; experience</h2>
+          <p>Formal study, professional training and hands-on support work, most recent first.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item is-current">
+            <div class="timeline-date">Mar 2026 – Present</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Professional programme, current</span>
+              <h3>Systems Support &amp; AI Prompting</h3>
+              <p class="timeline-org">Capaciti</p>
+              <p>An intensive IT support programme focused on system support and AI prompt engineering, building advanced technical troubleshooting skills and the ability to create intelligent digital solutions.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Professional programme</span>
+              <h3>Final Year Experience Programme (FYEP)</h3>
+              <p class="timeline-org">Cape Peninsula University of Technology</p>
+              <p>Completed CPUT's Final Year Experience Programme, covering professional workplace conduct in preparation for entering the workplace.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">2023 – 2025</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Education</span>
+              <h3>Diploma in ICT: Application Development</h3>
+              <p class="timeline-org">Cape Peninsula University of Technology</p>
+              <p>Studied software design, coding and database management, with projects in Java, Python and web technologies.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Education</span>
+              <h3>Higher Certificate in ICT</h3>
+              <p class="timeline-org">Cape Peninsula University of Technology</p>
+              <p>Foundational studies in information and communication technology covering computer fundamentals, networking and programming basics, preparing for diploma-level coursework.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">Apr 2021 – Mar 2022</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Certification</span>
+              <h3>Google IT Support Certificate</h3>
+              <p class="timeline-org">Google</p>
+              <p>Covered technical support, troubleshooting and IT fundamentals, enhanced with International Youth Foundation PTS Traveler training and SkillzBook's Critical Thinking.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">Dec 2020 – Jun 2021</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Volunteer experience</span>
+              <h3>Volunteer</h3>
+              <p class="timeline-org">Zeenash Media</p>
+              <p>Assisted with IT troubleshooting and support, administrative tasks and documentation, and collaborated with team members to meet project goals for media initiatives.</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-date">2020</div>
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <span class="timeline-type">Education</span>
+              <h3>National Senior Certificate (Grade 12)</h3>
+              <p class="timeline-org">Thozamisa Senior Secondary School</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section class="section section-dark" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="skills-title">Technical expertise</h2>
+          <p>The languages, platforms and tools I work with across development and support.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Software development</h3>
+            <p>Building web and application projects.</p>
+            <ul class="skill-list">
+              <li><i class="fab fa-html5" aria-hidden="true"></i> HTML</li>
+              <li><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS</li>
+              <li><i class="fab fa-js" aria-hidden="true"></i> JavaScript</li>
+              <li><i class="fab fa-react" aria-hidden="true"></i> React</li>
+              <li><i class="fab fa-java" aria-hidden="true"></i> Java</li>
+              <li><i class="fab fa-python" aria-hidden="true"></i> Python</li>
+              <li><i class="fab fa-php" aria-hidden="true"></i> PHP</li>
+              <li><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Databases &amp; systems</h3>
+            <p>Storing data and running the environments applications depend on.</p>
+            <ul class="skill-list">
+              <li><i class="fas fa-database" aria-hidden="true"></i> MySQL</li>
+              <li><i class="fas fa-server" aria-hidden="true"></i> SQL Server</li>
+              <li><i class="fab fa-linux" aria-hidden="true"></i> Linux</li>
+              <li><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Tools &amp; technologies</h3>
+            <p>Version control, integration, design and support.</p>
+            <ul class="skill-list">
+              <li><i class="fab fa-git-alt" aria-hidden="true"></i> Git</li>
+              <li><i class="fas fa-plug" aria-hidden="true"></i> APIs</li>
+              <li><i class="fab fa-figma" aria-hidden="true"></i> Figma</li>
+              <li><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i> IT Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="projects-title">Featured projects</h2>
+          <p>Three projects across front-end development, API integration and full-stack systems. Each one has a case study covering the problem, approach and implementation.</p>
+        </div>
+
+        <div class="project-list">
+          <!-- Plumbing -->
+          <article class="project" aria-labelledby="p1-title">
+            <a class="project-media" href="projects/plumbing-website.html" tabindex="-1" aria-hidden="true">
+              <div class="browser-bar"><span></span><span></span><span></span></div>
+              <div class="shot">
+                <img src="images/plumbling.webp" srcset="images/plumbling-sm.webp 400w, images/plumbling.webp 800w, images/case-plumbing-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 640px" width="800" height="400" alt="" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="project-info">
+              <p class="project-category">Business website, front-end</p>
+              <h3 id="p1-title"><a href="projects/plumbing-website.html">Plumbing Business Website</a></h3>
+              <p>A responsive website for Strictly Plumbing Solutions, a Cape Town plumbing business. It presents the company's services, a gallery of completed work, client testimonials and a quote request form in a clean, mobile-friendly layout.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn btn-navy" href="projects/plumbing-website.html">View project</a>
+                <a class="text-link" href="https://plumbling.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> of the Plumbing Business Website (opens in a new tab)</span></a>
+                <a class="text-link" href="https://github.com/Ririesphe/Website" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> repository for the Plumbing Business Website (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- WeatherWise -->
+          <article class="project" aria-labelledby="p2-title">
+            <a class="project-media" href="projects/weatherwise.html" tabindex="-1" aria-hidden="true">
+              <div class="browser-bar"><span></span><span></span><span></span></div>
+              <div class="shot">
+                <img src="images/wise.webp" srcset="images/wise-sm.webp 400w, images/wise.webp 800w, images/case-weatherwise-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 640px" width="800" height="400" alt="" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="project-info">
+              <p class="project-category">Web application, API integration</p>
+              <h3 id="p2-title"><a href="projects/weatherwise.html">WeatherWise Web Application</a></h3>
+              <p>A responsive weather application for areas around Cape Town. It pulls current conditions and a short forecast from the OpenWeatherMap API and turns the data into plain-language summaries and weather alerts.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>REST API</li><li>OpenWeatherMap</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn btn-navy" href="projects/weatherwise.html">View project</a>
+                <a class="text-link" href="https://dreamy-cuchufli-b17510.netlify.app/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> of WeatherWise (opens in a new tab)</span></a>
+                <a class="text-link" href="https://github.com/Ririesphe/WeatherWise-app" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> repository for WeatherWise (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Smarties -->
+          <article class="project" aria-labelledby="p3-title">
+            <a class="project-media" href="projects/smarties-ticket-system.html" tabindex="-1" aria-hidden="true">
+              <div class="browser-bar"><span></span><span></span><span></span></div>
+              <div class="shot">
+                <img src="images/smarties.webp" srcset="images/smarties-sm.webp 400w, images/smarties.webp 800w, images/case-smarties-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 640px" width="800" height="400" alt="" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="project-info">
+              <p class="project-category">Full-stack system, AI-assisted</p>
+              <h3 id="p3-title"><a href="projects/smarties-ticket-system.html">Smarties Ticket System</a></h3>
+              <p>An IT support and issue-tracking platform. Tickets are classified with AI and routed to the right department, and the system adds role-based dashboards, ticket chat, notifications, audit logs and downloadable reports.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Python</li><li>Flask</li><li>Firebase Firestore</li><li>OpenRouter API</li><li>Chart.js</li><li>ReportLab</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn btn-navy" href="projects/smarties-ticket-system.html">View project</a>
+                <a class="text-link" href="https://smarties-ticket-system.vercel.app" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> Live demo<span class="visually-hidden"> of the Smarties Ticket System (opens in a new tab)</span></a>
+                <a class="text-link" href="https://github.com/Ririesphe/Smarties_System" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> repository for the Smarties Ticket System (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Competencies ===================== -->
+    <section class="section" id="competencies" aria-labelledby="competencies-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="competencies-title">Professional competencies</h2>
+          <p>How I work with people and problems, alongside the technical skills.</p>
+        </div>
+
+        <ul class="competencies">
+          <li class="competency">
+            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+            <h3>Problem solving</h3>
+            <p>Breaking a problem into parts and working through it methodically, whether it's a bug in code or a support issue.</p>
+          </li>
+          <li class="competency">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <h3>Communication</h3>
+            <p>Explaining technical issues clearly to the people who rely on the technology.</p>
+          </li>
+          <li class="competency">
+            <i class="fas fa-people-group" aria-hidden="true"></i>
+            <h3>Teamwork</h3>
+            <p>Collaborating with others toward shared goals, from group projects to volunteer work.</p>
+          </li>
+          <li class="competency">
+            <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
+            <h3>Adaptability</h3>
+            <p>Picking up new tools and approaches as projects and technologies change.</p>
+          </li>
+          <li class="competency">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+            <h3>Time management</h3>
+            <p>Planning work to meet deadlines alongside study and training commitments.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section section-dark" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <h2 id="contact-title">Hiring for a junior or graduate role? Let's talk.</h2>
+          <p>I'm open to graduate programmes, entry-level roles, internships and learnerships in software development and IT support. Email or WhatsApp is the quickest way to reach me, and I'll get back to you as soon as possible.</p>
+
+          <ul class="contact-methods">
+            <li>
+              <a class="contact-method" href="mailto:ririemalotana@gmail.com">
+                <span class="cm-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                <span><span class="cm-label">Email</span><span class="cm-value">ririemalotana@gmail.com</span></span>
+                <i class="fas fa-arrow-right cm-go" aria-hidden="true"></i>
+              </a>
+              <button class="copy-btn" type="button" data-copy="ririemalotana@gmail.com" aria-label="Copy email address">
+                <i class="far fa-copy" aria-hidden="true"></i><span class="copy-label">Copy</span>
+              </button>
+            </li>
+            <li>
+              <a class="contact-method" href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" rel="noopener">
+                <span class="cm-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+                <span><span class="cm-label">LinkedIn</span><span class="cm-value">Siphelele Malotana<span class="visually-hidden"> (opens in a new tab)</span></span></span>
+                <i class="fas fa-arrow-right cm-go" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="contact-method" href="https://wa.me/27784003925" target="_blank" rel="noopener">
+                <span class="cm-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+                <span><span class="cm-label">WhatsApp</span><span class="cm-value">+27 78 400 3925<span class="visually-hidden"> (opens in a new tab)</span></span></span>
+                <i class="fas fa-arrow-right cm-go" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="contact-method" href="https://github.com/Ririesphe" target="_blank" rel="noopener">
+                <span class="cm-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                <span><span class="cm-label">GitHub</span><span class="cm-value">Ririesphe<span class="visually-hidden"> (opens in a new tab)</span></span></span>
+                <i class="fas fa-arrow-right cm-go" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <div class="contact-cv">
+            <a class="btn btn-gold" href="cv/S.Malotana-Cv.pdf" download><i class="fas fa-arrow-down" aria-hidden="true"></i> Download CV</a>
+            <a class="btn btn-ghost-light" href="cv/S.Malotana-Cv.pdf" target="_blank" rel="noopener"><i class="fas fa-file-lines" aria-hidden="true"></i> View CV<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Send a message</h3>
+          <p>Tell me about the role or opportunity and I'll reply by email.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="from_name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="reply_to" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="e.g. Graduate developer role" required>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-navy form-submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#main" aria-label="Back to top">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Siphelele Malotana</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/siphelele-malotana-21837321b" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/Ririesphe" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:ririemalotana@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <p>© <span id="year">2026</span> Siphelele Malotana</p>
     </div>
   </footer>
 
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
   <script src="script.js" defer></script>
 </body>
-
 </html>
