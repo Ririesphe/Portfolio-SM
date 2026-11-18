@@ -280,3 +280,83 @@ if(hamburger && navLinks){
         hamburger.setAttribute("aria-expanded", "false");
     }));
 }
+
+// =========================
+// PROJECTS CAROUSEL
+// Native horizontal scrolling (touch swipe, trackpad, keyboard) with
+// arrow buttons and page dots. Cards per view are set in CSS.
+// =========================
+(function(){
+    const track = document.getElementById("projects-track");
+    const prevBtn = document.getElementById("projects-prev");
+    const nextBtn = document.getElementById("projects-next");
+    const dotsWrap = document.getElementById("projects-dots");
+    if(!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    const cards = Array.from(track.querySelectorAll(".premium-card"));
+    cards.forEach((card, i) => {
+        card.setAttribute("role", "group");
+        card.setAttribute("aria-roledescription", "slide");
+        card.setAttribute("aria-label", `${i + 1} of ${cards.length}`);
+    });
+
+    // Distance between the starts of two neighbouring cards
+    const step = () => cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth;
+    const perView = () => Math.max(1, Math.round((track.clientWidth + 1) / step()));
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const pageCount = () => Math.max(1, Math.ceil((cards.length - perView()) / perView()) + 1);
+
+    function currentPage(){
+        if(track.scrollLeft >= maxScroll() - 2) return pageCount() - 1;
+        return Math.round(track.scrollLeft / (step() * perView()));
+    }
+
+    function goToPage(page){
+        const target = Math.min(page * perView() * step(), maxScroll());
+        track.scrollTo({ left: target });
+    }
+
+    function renderDots(){
+        const count = pageCount();
+        dotsWrap.innerHTML = "";
+        dotsWrap.hidden = count < 2;
+        for(let i = 0; i < count; i++){
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "carousel-dot";
+            dot.setAttribute("aria-label", `Show project page ${i + 1} of ${count}`);
+            dot.addEventListener("click", () => goToPage(i));
+            dotsWrap.appendChild(dot);
+        }
+    }
+
+    function update(){
+        const atStart = track.scrollLeft <= 2;
+        const atEnd = track.scrollLeft >= maxScroll() - 2;
+        prevBtn.disabled = atStart;
+        nextBtn.disabled = atEnd;
+        const page = currentPage();
+        Array.from(dotsWrap.children).forEach((dot, i) => {
+            if(i === page) dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+        });
+    }
+
+    prevBtn.addEventListener("click", () => goToPage(Math.max(0, currentPage() - 1)));
+    nextBtn.addEventListener("click", () => goToPage(Math.min(pageCount() - 1, currentPage() + 1)));
+
+    let ticking = false;
+    track.addEventListener("scroll", () => {
+        if(ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { update(); ticking = false; });
+    }, { passive: true });
+
+    let lastPages = 0;
+    function refresh(){
+        if(pageCount() !== lastPages){ renderDots(); lastPages = pageCount(); }
+        update();
+    }
+    window.addEventListener("resize", refresh);
+    refresh();
+})();
