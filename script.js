@@ -1,7 +1,7 @@
 // =========================
 // EMAILJS INIT
 // =========================
-emailjs.init("D5_iZOaeAj2N1-vcU");
+if (typeof emailjs !== "undefined") { emailjs.init("D5_iZOaeAj2N1-vcU"); }
 
 // =========================
 // DARK MODE TOGGLE
@@ -219,6 +219,12 @@ if(contactForm){
         };
 
         // Send via EmailJS
+        if (typeof emailjs === "undefined") {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            alert("The form couldn't load. Please email ririemalotana@gmail.com directly.");
+            return;
+        }
         emailjs.send("service_22b95u5", "template_hbmmbkn", formData)
         .then(() => {
             // Success State
@@ -237,4 +243,40 @@ if(contactForm){
             alert("Failed to send message. Please try again later.");
         });
     });
+}
+// =========================
+// ACTIVE SECTION IN NAVIGATION
+// =========================
+(function(){
+    const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    if(!navAnchors.length || !("IntersectionObserver" in window)) return;
+    const spy = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+            navAnchors.forEach(a => {
+                const on = a.getAttribute("href") === "#" + entry.target.id;
+                a.classList.toggle("active", on);
+                if(on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+            });
+        });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    navAnchors.forEach(a => {
+        const target = document.querySelector(a.getAttribute("href"));
+        if(target) spy.observe(target);
+    });
+})();
+
+// =========================
+// MENU STATE FOR SCREEN READERS + CLOSE ON LINK CLICK
+// =========================
+if(hamburger && navLinks){
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-controls", "nav-links");
+    hamburger.addEventListener("click", () => {
+        hamburger.setAttribute("aria-expanded", String(navLinks.classList.contains("show")));
+    });
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        hamburger.setAttribute("aria-expanded", "false");
+    }));
 }
