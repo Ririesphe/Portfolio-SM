@@ -149,7 +149,7 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 #history h2{margin-bottom:22px}
 .section-intro{font-size:17px;color:var(--text-soft);margin-bottom:56px;padding-top:4px}
 .timeline{list-style:none;padding:0;margin:0;max-width:1100px}
-.timeline-item{display:grid;grid-template-columns:200px 40px minmax(0,1fr)}
+.timeline-item{display:grid;grid-template-columns:220px 40px minmax(0,1fr)}
 .timeline-date{padding-top:22px;font-weight:600;font-size:16px;color:var(--heading);font-variant-numeric:tabular-nums}
 .timeline-rail{position:relative}
 .timeline-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)}
@@ -164,15 +164,6 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .timeline-body h3{font-size:22px;font-weight:600;line-height:1.3;color:var(--heading);letter-spacing:-.01em}
 .timeline-org{font-size:17px;font-weight:500;color:var(--heading);margin-top:4px}
 .timeline-body p:not(.timeline-org){font-size:16px;line-height:1.75;color:var(--text-soft);margin-top:12px}
-.timeline-item.is-featured .timeline-body{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:var(--radius-lg);padding:24px 28px 26px;margin:0 0 46px 14px;box-shadow:var(--shadow-sm)}
-.timeline-item.is-featured .timeline-date{padding-top:30px}
-.timeline-item.is-featured .timeline-rail::after{top:33px}
-.timeline-item.is-featured:first-child .timeline-rail::before{top:38px}
-.timeline-highlights{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px}
-.timeline-highlights li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--text)}
-.timeline-highlights li::before{content:"";position:absolute;left:2px;top:.68em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.timeline-tags{list-style:none;padding:16px 0 0;margin:18px 0 0;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px}
-.timeline-tags li{font-size:12.5px;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)}
 @media (max-width:720px){
   .timeline-item{grid-template-columns:24px minmax(0,1fr)}
   .timeline-rail{grid-column:1;grid-row:1 / span 2}
@@ -183,9 +174,6 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
   .timeline-body{grid-column:2;grid-row:2;padding:8px 0 36px 0}
   .timeline-body h3{font-size:19px}
   .section-intro{margin-bottom:36px}
-  .timeline-item.is-featured .timeline-body{margin:8px 0 36px 0;padding:20px 18px}
-  .timeline-item.is-featured .timeline-date{padding-top:12px}
-  .timeline-item.is-featured .timeline-rail::after{top:18px}
 }
 
 /* ===== Skills ===== */
@@ -465,26 +453,20 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
       <p class="section-intro">Work, formal study and professional training, most recent first.</p>
 
       <ol class="timeline">
-        <li class="timeline-item is-current is-featured">
-          <div class="timeline-date">Sep 2026 – Present</div>
+        <li class="timeline-item is-current">
+          <div class="timeline-date">September 2026 – Present</div>
           <div class="timeline-rail" aria-hidden="true"></div>
           <div class="timeline-body">
-            <span class="timeline-type">Software development, current</span>
+            <span class="timeline-type">Professional Experience · Current</span>
             <h3>Full-Stack Developer Intern</h3>
             <p class="timeline-org">Mavis Strategic Partners (MSP)</p>
-            <p>Developing the MSP Company Operations and Performance Dashboard, an internal business management system
-              that supports the company's day-to-day operations across departments.</p>
-            <ul class="timeline-highlights">
-              <li>Build frontend and backend functionality using Python, Flask and JavaScript/React.</li>
-              <li>Develop employee portals and role-specific dashboards, with user management and access control.</li>
-              <li>Design, integrate and manage the application's database.</li>
-              <li>Deliver HR, Finance, Administration and departmental functionality that improves business workflows and operational processes.</li>
-              <li>Test, debug and maintain application functionality.</li>
-              <li>Implement updates and improvements across client websites and projects, including managing website tracking pixels through cPanel.</li>
-            </ul>
-            <ul class="timeline-tags" aria-label="Technologies used">
-              <li>Python</li><li>Flask</li><li>JavaScript</li><li>React</li><li>cPanel</li>
-            </ul>
+            <p>Working as a Full-Stack Developer Intern, contributing to the development and maintenance of business
+              applications and internal software systems. Currently developing the MSP Company Operations and Performance
+              Dashboard, an integrated platform designed to streamline business operations, employee management and
+              departmental workflows.</p>
+            <p>My responsibilities include frontend and backend development with Python, Flask, JavaScript and React,
+              database integration, implementing role-based dashboards and access control, developing application
+              functionality, troubleshooting, testing and improving existing systems.</p>
           </div>
         </li>
 
