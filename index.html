@@ -145,32 +145,47 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .availability-note{font-size:15px;font-weight:500;color:var(--heading);margin-top:8px;background:rgba(185,154,99,.1);border:1px solid rgba(185,154,99,.35);border-left:3px solid var(--gold);padding:12px 16px;border-radius:var(--radius);display:inline-block;line-height:1.6}
 
 /* ===== History (timeline) ===== */
-#history{padding:110px 10%;position:relative;overflow:hidden}
-.history-tree{position:relative;list-style:none;padding:0;margin:20px auto 0;max-width:1040px}
-.history-tree::after{content:"";display:table;clear:both}
-.history-tree::before{content:'';position:absolute;left:50%;top:0;width:1px;height:100%;background:var(--border);transform:translateX(-50%)}
-.history-tree li{position:relative;width:50%;margin-bottom:36px;display:flex;justify-content:flex-end;clear:both}
-.history-tree li.right{float:right;justify-content:flex-start;margin-left:50%;text-align:left}
-.history-tree li.left{float:left;justify-content:flex-end;margin-right:50%;text-align:right}
-.history-tree li span{width:88%;background:var(--card);padding:26px 28px;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:border-color .25s,box-shadow .25s;position:relative;z-index:10}
-.history-tree li span:hover{border-color:rgba(185,154,99,.6);box-shadow:var(--shadow)}
-.history-tree li span > i{color:var(--gold);font-size:15px;margin-right:4px}
-.history-tree li::before{content:'';position:absolute;top:30px;width:13px;height:13px;background:var(--bg);border:2px solid var(--navy-2);border-radius:50%;z-index:20;transition:background-color .25s,border-color .25s}
-.dark-mode .history-tree li::before{border-color:var(--gold)}
-.history-tree li.left::before{right:-7px}
-.history-tree li.right::before{left:-6px}
-.history-tree li:hover::before{background:var(--gold);border-color:var(--gold)}
-.history-tree li span strong{display:inline;font-size:18px;font-weight:600;color:var(--heading);line-height:1.4}
-.history-tree li span p strong{font-size:inherit;font-weight:600}
-.history-tree li span small{display:table;background:transparent;color:var(--gold-text);padding:0;border-radius:0;font-weight:600;font-size:13px;letter-spacing:.01em;margin:8px 0 10px}
-.history-tree li.left span small{margin-left:auto}
-.history-tree li span p{font-size:15px;color:var(--text-soft);line-height:1.7;max-width:none}
-@media (max-width:900px){
-  .history-tree::before{left:20px}
-  .history-tree li{width:100%;float:none;margin-left:0 !important;margin-right:0 !important;padding-left:48px;text-align:left !important;justify-content:flex-start !important}
-  .history-tree li.left::before,.history-tree li.right::before{left:14px}
-  .history-tree li span{width:100%}
-  .history-tree li.left span small{margin-left:0}
+#history{padding:110px 10%;position:relative}
+#history h2{margin-bottom:22px}
+.section-intro{font-size:17px;color:var(--text-soft);margin-bottom:56px;padding-top:4px}
+.timeline{list-style:none;padding:0;margin:0;max-width:1100px}
+.timeline-item{display:grid;grid-template-columns:200px 40px minmax(0,1fr)}
+.timeline-date{padding-top:22px;font-weight:600;font-size:16px;color:var(--heading);font-variant-numeric:tabular-nums}
+.timeline-rail{position:relative}
+.timeline-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)}
+.timeline-item:first-child .timeline-rail::before{top:30px}
+.timeline-item:last-child .timeline-rail::before{bottom:auto;height:30px}
+.timeline-rail::after{content:"";position:absolute;left:50%;top:25px;width:12px;height:12px;transform:translateX(-50%);background:var(--bg);border:2px solid var(--navy-2);border-radius:50%}
+.dark-mode .timeline-rail::after{border-color:var(--gold)}
+.timeline-item.is-current .timeline-rail::after{background:var(--gold);border-color:var(--gold)}
+.timeline-body{padding:16px 0 46px 14px;max-width:760px}
+.timeline-type{display:inline-block;font-size:13px;font-weight:600;color:var(--text-soft);border:1px solid var(--border);border-radius:999px;padding:3px 12px;margin-bottom:12px;background:var(--card)}
+.timeline-item.is-current .timeline-type{border-color:var(--gold);color:var(--gold-text);background:transparent}
+.timeline-body h3{font-size:22px;font-weight:600;line-height:1.3;color:var(--heading);letter-spacing:-.01em}
+.timeline-org{font-size:17px;font-weight:500;color:var(--heading);margin-top:4px}
+.timeline-body p:not(.timeline-org){font-size:16px;line-height:1.75;color:var(--text-soft);margin-top:12px}
+.timeline-item.is-featured .timeline-body{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:var(--radius-lg);padding:24px 28px 26px;margin:0 0 46px 14px;box-shadow:var(--shadow-sm)}
+.timeline-item.is-featured .timeline-date{padding-top:30px}
+.timeline-item.is-featured .timeline-rail::after{top:33px}
+.timeline-item.is-featured:first-child .timeline-rail::before{top:38px}
+.timeline-highlights{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px}
+.timeline-highlights li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--text)}
+.timeline-highlights li::before{content:"";position:absolute;left:2px;top:.68em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.timeline-tags{list-style:none;padding:16px 0 0;margin:18px 0 0;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px}
+.timeline-tags li{font-size:12.5px;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)}
+@media (max-width:720px){
+  .timeline-item{grid-template-columns:24px minmax(0,1fr)}
+  .timeline-rail{grid-column:1;grid-row:1 / span 2}
+  .timeline-rail::before,.timeline-rail::after{left:6px}
+  .timeline-rail::after{top:18px}
+  .timeline-item:first-child .timeline-rail::before{top:22px}
+  .timeline-date{grid-column:2;grid-row:1;padding-top:12px;font-size:15px}
+  .timeline-body{grid-column:2;grid-row:2;padding:8px 0 36px 0}
+  .timeline-body h3{font-size:19px}
+  .section-intro{margin-bottom:36px}
+  .timeline-item.is-featured .timeline-body{margin:8px 0 36px 0;padding:20px 18px}
+  .timeline-item.is-featured .timeline-date{padding-top:12px}
+  .timeline-item.is-featured .timeline-rail::after{top:18px}
 }
 
 /* ===== Skills ===== */
@@ -195,7 +210,18 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .soft-card i{font-size:17px;color:var(--gold);width:20px;text-align:center}
 .soft-card p{font-size:15px;font-weight:500;text-align:left;color:var(--heading)}
 .soft-card:hover{border-color:rgba(185,154,99,.6);box-shadow:var(--shadow)}
-@media(max-width:1000px){.skills-container{grid-template-columns:1fr}}
+@media(max-width:1000px){.skills-container{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.skills-container{grid-template-columns:1fr}}
+.skill-logo{width:16px;height:16px;object-fit:contain;flex:none}
+.dark-mode .skill-logo.mono{filter:invert(1) brightness(1.1)}
+.tech-competencies{padding-bottom:90px}
+.competencies-intro{text-align:center;color:var(--text-soft);font-size:16px;margin:-24px auto 32px;max-width:60ch}
+.competency-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;max-width:900px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:10px 28px;box-shadow:var(--shadow-sm)}
+.competency-list li{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);font-size:15px;font-weight:500;color:var(--heading)}
+.competency-list li:nth-last-child(-n+2){border-bottom:0}
+.competency-list i{color:var(--gold);font-size:13px;width:16px;text-align:center}
+@media(max-width:700px){.competency-list{grid-template-columns:1fr;padding:6px 20px}.competency-list li:nth-last-child(2){border-bottom:1px solid var(--border)}}
+
 
 /* ===== Projects ===== */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:0}
@@ -306,7 +332,8 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
   .quick-facts{justify-content:center}
   .section h2::after{left:50%;margin-left:-24px}
   .section h2{text-align:center}
-  #projects h2,#history h2{text-align:center}
+  #projects h2{text-align:center}
+  #history h2,.section-intro{text-align:center}
 }
 @media(max-width:600px){
   .hero{padding:48px 5%;min-height:auto}
@@ -322,10 +349,6 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
   .soft-skills-section{padding:0 5% 64px}
   .section h2{margin-bottom:32px}
   .projects{grid-template-columns:1fr}
-  .history-tree li span{padding:20px}
-  .history-tree::before{left:14px}
-  .history-tree li{padding-left:38px}
-  .history-tree li.left::before,.history-tree li.right::before{left:8px}
   .glass-form{padding:24px}
   .linkedin-cta-card{flex-wrap:wrap;text-align:left}
 }
@@ -439,70 +462,108 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
     <section id="history" class="section">
       <h2>History</h2>
 
-      <ul class="history-tree">
-        <!-- Current: Capaciti -->
-        <li class="left">
-          <span>
-            <i class="fas fa-microchip"></i> <strong>Capaciti: Systems Support &amp; AI Prompting</strong>
-            <small>03 March 2026 – Present</small>
-            <p>Currently enrolled in an intensive IT Support program at Capaciti, focusing on System Support and AI Prompt
-              Engineering to build advanced technical troubleshooting skills and intelligent digital solutions.</p>
-          </span>
+      <p class="section-intro">Work, formal study and professional training, most recent first.</p>
+
+      <ol class="timeline">
+        <li class="timeline-item is-current is-featured">
+          <div class="timeline-date">Sep 2026 – Present</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Software development, current</span>
+            <h3>Full-Stack Developer Intern</h3>
+            <p class="timeline-org">Mavis Strategic Partners (MSP)</p>
+            <p>Developing the MSP Company Operations and Performance Dashboard, an internal business management system
+              that supports the company's day-to-day operations across departments.</p>
+            <ul class="timeline-highlights">
+              <li>Build frontend and backend functionality using Python, Flask and JavaScript/React.</li>
+              <li>Develop employee portals and role-specific dashboards, with user management and access control.</li>
+              <li>Design, integrate and manage the application's database.</li>
+              <li>Deliver HR, Finance, Administration and departmental functionality that improves business workflows and operational processes.</li>
+              <li>Test, debug and maintain application functionality.</li>
+              <li>Implement updates and improvements across client websites and projects, including managing website tracking pixels through cPanel.</li>
+            </ul>
+            <ul class="timeline-tags" aria-label="Technologies used">
+              <li>Python</li><li>Flask</li><li>JavaScript</li><li>React</li><li>cPanel</li>
+            </ul>
+          </div>
         </li>
 
-        <!-- Diploma (latest) -->
-        <li class="right">
-          <span>
-            <i class="fas fa-graduation-cap"></i> <strong>CPUT Diploma in ICT: Application Development</strong>
-            <small>2023 – 2025</small>
-            <p>Tertiary institution was <strong>Cape Peninsula University of Technology</strong>, where I completed my
-              Diploma in ICT with a focus on Application Development. Learned software design, coding, and database
-              management, with projects in Java, Python, and web technologies.</p>
-          </span>
+        <li class="timeline-item is-current">
+          <div class="timeline-date">Mar 2026 – Present</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Professional programme, current</span>
+            <h3>Systems Support &amp; AI Prompting</h3>
+            <p class="timeline-org">Capaciti</p>
+            <p>An intensive IT support programme focused on system support and AI prompt engineering, building advanced technical troubleshooting skills and the ability to create intelligent digital solutions.</p>
+          </div>
         </li>
 
-        <!-- Higher Certificate -->
-        <li class="left">
-          <span>
-            <i class="fas fa-certificate"></i> <strong>CPUT Higher Certificate in ICT</strong>
-            <small>2022</small>
-            <p>Completed foundational studies in Information and Communication Technology, covering computer fundamentals,
-              networking, and programming basics, preparing me for higher diploma coursework.</p>
-          </span>
+        <li class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Professional programme</span>
+            <h3>Final Year Experience Programme (FYEP)</h3>
+            <p class="timeline-org">Cape Peninsula University of Technology</p>
+            <p>Completed CPUT's Final Year Experience Programme, covering professional workplace conduct in preparation for entering the workplace.</p>
+          </div>
         </li>
 
-        <!-- Google IT Support Certificate -->
-        <li class="right">
-          <span>
-            <i class="fas fa-certificate"></i> <strong>Google IT Support Certificate</strong>
-            <small>April 2021 – March 2022</small>
-            <p>Enhanced with <strong>International Youth Foundation PTS Traveler training</strong> and
-              <strong>SkillzBook's Critical Thinking</strong>, covering technical support, troubleshooting, and IT
-              fundamentals.
-            </p>
-          </span>
+        <li class="timeline-item">
+          <div class="timeline-date">2023 – 2025</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Education</span>
+            <h3>Diploma in ICT: Application Development</h3>
+            <p class="timeline-org">Cape Peninsula University of Technology</p>
+            <p>Studied software design, coding and database management, with projects in Java, Python and web technologies.</p>
+          </div>
         </li>
 
-        <!-- Volunteer Experience -->
-        <li class="left">
-          <span>
-            <i class="fas fa-hands-helping"></i> <strong>Zeenash Media Volunteer</strong>
-            <small>Dec 2020 – June 2021</small>
-            <p>Assisted with IT troubleshooting, administrative tasks, and project collaboration for media initiatives,
-              gaining hands-on experience in problem-solving and teamwork.</p>
-          </span>
+        <li class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Education</span>
+            <h3>Higher Certificate in ICT</h3>
+            <p class="timeline-org">Cape Peninsula University of Technology</p>
+            <p>Foundational studies in information and communication technology covering computer fundamentals, networking and programming basics, preparing for diploma-level coursework.</p>
+          </div>
         </li>
 
-        <!-- High School -->
-        <li class="right">
-          <span>
-            <i class="fas fa-school"></i> <strong>Thozamisa Senior Secondary School</strong>
-            <small>2020</small>
-            <p>National Senior Certificate, Grade 12. Completed foundational education with focus on core subjects,
-              preparing for higher studies in ICT.</p>
-          </span>
+        <li class="timeline-item">
+          <div class="timeline-date">Apr 2021 – Mar 2022</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Certification</span>
+            <h3>Google IT Support Certificate</h3>
+            <p class="timeline-org">Google</p>
+            <p>Covered technical support, troubleshooting and IT fundamentals, enhanced with International Youth Foundation PTS Traveler training and SkillzBook's Critical Thinking.</p>
+          </div>
         </li>
-      </ul>
+
+        <li class="timeline-item">
+          <div class="timeline-date">Dec 2020 – Jun 2021</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Volunteer experience</span>
+            <h3>Volunteer</h3>
+            <p class="timeline-org">Zeenash Media</p>
+            <p>Assisted with IT troubleshooting and support, administrative tasks and documentation, and collaborated with team members to meet project goals for media initiatives.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">2020</div>
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-body">
+            <span class="timeline-type">Education</span>
+            <h3>National Senior Certificate (Grade 12)</h3>
+            <p class="timeline-org">Thozamisa Senior Secondary School</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
 
@@ -544,7 +605,29 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
-        <!-- Group 2: Database & infrastructure -->
+        <!-- Group 2: Frameworks & libraries -->
+        <div class="skill-group">
+          <h3>Frameworks &amp; Libraries</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/flask.svg" alt="" width="16" height="16" loading="lazy"><span>Flask</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/laravel.svg" alt="" width="16" height="16" loading="lazy"><span>Laravel</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/spring.svg" alt="" width="16" height="16" loading="lazy"><span>Spring Boot</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/bootstrap.svg" alt="" width="16" height="16" loading="lazy"><span>Bootstrap</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/tailwindcss.svg" alt="" width="16" height="16" loading="lazy"><span>Tailwind CSS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: Database & infrastructure -->
         <div class="skill-group">
           <h3>Database &amp; Systems</h3>
           <div class="hex-grid">
@@ -555,6 +638,9 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
               <div class="hex-inner"><i class="fas fa-server"></i><span>SQL Server</span></div>
             </div>
             <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/sqlite.svg" alt="" width="16" height="16" loading="lazy"><span>SQLite</span></div>
+            </div>
+            <div class="hex">
               <div class="hex-inner"><i class="fab fa-linux"></i><span>Linux</span></div>
             </div>
             <div class="hex">
@@ -563,18 +649,61 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
-        <!-- Group 3: Tools & Certs -->
+        <!-- Group 4: Backend engineering -->
         <div class="skill-group">
-          <h3>Professional Tools</h3>
+          <h3>Backend Engineering</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-code"></i><span>RESTful APIs</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-diagram-project"></i><span>Database Design</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-table"></i><span>CRUD Operations</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-user-lock"></i><span>Authentication &amp; Authorisation</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-user-shield"></i><span>Role-Based Access Control (RBAC)</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-plug"></i><span>Backend Integration</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 5: Tools & deployment -->
+        <div class="skill-group">
+          <h3>Tools &amp; Deployment</h3>
           <div class="hex-grid">
             <div class="hex">
               <div class="hex-inner"><i class="fab fa-git-alt"></i><span>Git</span></div>
             </div>
             <div class="hex">
-              <div class="hex-inner"><i class="fas fa-code"></i><span>APIs</span></div>
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/github.svg" alt="" width="16" height="16" loading="lazy"><span>GitHub</span></div>
             </div>
             <div class="hex">
-              <div class="hex-inner"><i class="fas fa-pencil-ruler"></i><span>Figma</span></div>
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/vscode.svg" alt="" width="16" height="16" loading="lazy"><span>Visual Studio Code</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/intellij.svg" alt="" width="16" height="16" loading="lazy"><span>IntelliJ IDEA</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/netbeans.svg" alt="" width="16" height="16" loading="lazy"><span>NetBeans</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/postman.svg" alt="" width="16" height="16" loading="lazy"><span>Postman</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fab fa-figma"></i><span>Figma</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/vercel.svg" alt="" width="16" height="16" loading="lazy"><span>Vercel</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/netlify.svg" alt="" width="16" height="16" loading="lazy"><span>Netlify</span></div>
             </div>
             <div class="hex">
               <div class="hex-inner"><i class="fas fa-tools"></i><span>IT Support</span></div>
@@ -582,9 +711,46 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
+        <!-- Group 6: AI & emerging technologies -->
+        <div class="skill-group">
+          <h3>AI &amp; Emerging Technologies</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-wand-magic-sparkles"></i><span>AI Prompt Engineering</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-robot"></i><span>Generative AI Tools</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-laptop-code"></i><span>AI-Assisted Development</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-gears"></i><span>AI Workflow Automation</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
+
+    <!-- Technical Competencies -->
+    <div class="soft-skills-section tech-competencies">
+      <h2>Technical Competencies</h2>
+      <p class="competencies-intro">Practical software engineering skills developed through real-world projects and professional work.</p>
+      <ul class="competency-list">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Full-Stack Web Application Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Dashboard Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Database Management and Integration</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> User Management Systems</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Role-Based Dashboard Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Workflow Automation</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> System Troubleshooting and Maintenance</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> UI/UX Implementation</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Application Testing and Debugging</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Software Documentation</li>
+      </ul>
+    </div>
 
     <!-- Soft Skills -->
     <div class="soft-skills-section">
