@@ -201,8 +201,9 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .soft-card i{font-size:17px;color:var(--gold);width:20px;text-align:center}
 .soft-card p{font-size:15px;font-weight:500;text-align:left;color:var(--heading)}
 .soft-card:hover{border-color:rgba(185,154,99,.6);box-shadow:var(--shadow)}
+.skill-group--wide{grid-column:span 2}
 @media(max-width:1000px){.skills-container{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.skills-container{grid-template-columns:1fr}}
+@media(max-width:700px){.skills-container{grid-template-columns:1fr}.skill-group--wide{grid-column:auto}}
 .skill-logo{width:16px;height:16px;object-fit:contain;flex:none}
 .dark-mode .skill-logo.mono{filter:invert(1) brightness(1.1)}
 .tech-competencies{padding-bottom:90px}
@@ -433,7 +434,7 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
             that solve real-world problems. With a background in Application Development and practical experience
             developing full-stack solutions, I enjoy turning ideas into functional, user-focused applications.</p>
           <p class="hero-status"><span class="hero-status-dot" aria-hidden="true"></span> Currently: Full-Stack
-            Developer Intern at Mavis Strategic Partners (MSP)</p>
+            Developer Intern &amp; Software Tester at Mavis Strategic Partners (MSP)</p>
           <div class="hero-btns">
             <button onclick="scrollToProjects()" class="main-btn">View My Work</button>
             <button onclick="scrollToContact()" class="sec-btn">Contact Me</button>
@@ -464,10 +465,13 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           <p>I am an ICT graduate based in Cape Town, South Africa, with a Diploma in ICT: Application Development from
             Cape Peninsula University of Technology (CPUT).</p>
           <p>My journey in technology has grown from academic application development into practical software
-            engineering experience. I currently work as a Full-Stack Developer Intern at Mavis Strategic Partners, where I
-            contribute to developing business applications, internal management systems and dashboard solutions.</p>
+            engineering experience. I currently work as a Full-Stack Developer Intern and Software Tester at Mavis Strategic
+            Partners, where I contribute to developing and testing business applications, internal management systems and
+            dashboard solutions.</p>
           <p>My technical experience includes frontend and backend development, database integration, system
-            development and troubleshooting. I'm also interested in AI-powered applications, workflow automation and
+            development and troubleshooting, alongside manual functional and regression testing, defect reporting and release
+            validation. Working across development and quality assurance has given me exposure to different stages of the
+            software development lifecycle. I'm also interested in AI-powered applications, workflow automation and
             exploring how emerging technologies can improve digital solutions.</p>
           <p>Alongside my professional experience, I am continuing to strengthen my skills through Capaciti's Systems
             Support and AI Prompting programme.</p>
@@ -477,7 +481,7 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           <div class="quick-facts">
             <div class="fact-card"><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</div>
             <div class="fact-card"><i class="fas fa-graduation-cap"></i> ICT Graduate – CPUT</div>
-            <div class="fact-card"><i class="fas fa-briefcase"></i> Full-Stack Developer Intern – Mavis Strategic Partners</div>
+            <div class="fact-card"><i class="fas fa-briefcase"></i> Full-Stack Developer Intern &amp; Software Tester – Mavis Strategic Partners</div>
             <div class="fact-card"><i class="fas fa-certificate"></i> Google IT Support Certified</div>
             <div class="fact-card"><i class="fas fa-laptop-code"></i> Systems Support &amp; AI Prompting – Capaciti</div>
           </div>
@@ -502,15 +506,16 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           <div class="timeline-rail" aria-hidden="true"></div>
           <div class="timeline-body">
             <span class="timeline-type">Professional Experience · Current</span>
-            <h3>Full-Stack Developer Intern</h3>
-            <p class="timeline-org">Mavis Strategic Partners (MSP)</p>
-            <p>Working as a Full-Stack Developer Intern, contributing to the development and maintenance of business
-              applications and internal software systems. Currently developing the MSP Company Operations and Performance
-              Dashboard, an integrated platform designed to streamline business operations, employee management and
-              departmental workflows.</p>
-            <p>My responsibilities include frontend and backend development with Python, Flask, JavaScript and React,
-              database integration, implementing role-based dashboards and access control, developing application
-              functionality, troubleshooting, testing and improving existing systems.</p>
+            <h3>Full-Stack Developer Intern &amp; Software Tester</h3>
+            <p class="timeline-org">Mavis Strategic Partners</p>
+            <p>Contributing to both full-stack development and software testing on business applications and internal
+              software systems, including the MSP Company Operations and Performance Dashboard, an integrated platform for
+              business operations, employee management and departmental workflows.</p>
+            <p><strong>Development:</strong> frontend and backend development with Python, Flask, JavaScript and React,
+              database integration, role-based dashboards and access control, troubleshooting and improving existing systems.</p>
+            <p><strong>Software testing:</strong> manual functional and regression testing of web and mobile applications
+              before production releases, detailed bug reports in GitLab Issues, deployment validation and post-release
+              verification, and user story validation with developers in Agile (Scrum) sprints.</p>
           </div>
         </li>
 
@@ -752,6 +757,71 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
             </div>
             <div class="hex">
               <div class="hex-inner"><i class="fas fa-gears"></i><span>AI Workflow Automation</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 7: Software testing & quality assurance -->
+        <div class="skill-group skill-group--wide">
+          <h3>Software Testing &amp; QA</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-hand-pointer"></i><span>Manual Testing</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-circle-check"></i><span>Functional Testing</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-rotate"></i><span>Regression Testing</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-globe"></i><span>Web Application Testing</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-mobile-screen"></i><span>Mobile Application Testing</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-bug"></i><span>Bug Reporting &amp; Defect Tracking</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-list-check"></i><span>Test Case Execution</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-file-lines"></i><span>Test Evidence Documentation</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-rocket"></i><span>Deployment Validation</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-clipboard-check"></i><span>Post-Release Verification</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-user-check"></i><span>User Story Validation</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-magnifying-glass"></i><span>Requirements Analysis</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-triangle-exclamation"></i><span>Edge Case Identification</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 8: Testing & collaboration tools -->
+        <div class="skill-group">
+          <h3>Testing &amp; Collaboration Tools</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fab fa-gitlab"></i><span>GitLab</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-ticket"></i><span>GitLab Issues</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-arrows-spin"></i><span>Agile Methodology</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-people-group"></i><span>Scrum</span></div>
             </div>
           </div>
         </div>
