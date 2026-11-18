@@ -26,9 +26,17 @@ themeToggle.addEventListener("click", () => {
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
+hamburger.setAttribute("aria-controls", "nav-links");
+hamburger.setAttribute("aria-expanded", "false");
+
+function setMenuOpen(open){
+    navLinks.classList.toggle("show", open);
+    hamburger.setAttribute("aria-expanded", String(open));
+}
+
+hamburger.addEventListener("click", () => setMenuOpen(!navLinks.classList.contains("show")));
+// Close the mobile menu once a section is chosen
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenuOpen(false)));
 
 // =========================
 // PROJECT FILTER SYSTEM
@@ -266,20 +274,6 @@ if(contactForm){
     });
 })();
 
-// =========================
-// MENU STATE FOR SCREEN READERS + CLOSE ON LINK CLICK
-// =========================
-if(hamburger && navLinks){
-    hamburger.setAttribute("aria-expanded", "false");
-    hamburger.setAttribute("aria-controls", "nav-links");
-    hamburger.addEventListener("click", () => {
-        hamburger.setAttribute("aria-expanded", String(navLinks.classList.contains("show")));
-    });
-    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-        hamburger.setAttribute("aria-expanded", "false");
-    }));
-}
 
 // =========================
 // PROJECTS CAROUSEL
