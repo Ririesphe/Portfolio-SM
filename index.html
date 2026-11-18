@@ -164,6 +164,15 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .timeline-body h3{font-size:22px;font-weight:600;line-height:1.3;color:var(--heading);letter-spacing:-.01em}
 .timeline-org{font-size:17px;font-weight:500;color:var(--heading);margin-top:4px}
 .timeline-body p:not(.timeline-org){font-size:16px;line-height:1.75;color:var(--text-soft);margin-top:12px}
+.timeline-item.is-featured .timeline-body{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:var(--radius-lg);padding:24px 28px 26px;margin:0 0 46px 14px;box-shadow:var(--shadow-sm)}
+.timeline-item.is-featured .timeline-date{padding-top:30px}
+.timeline-item.is-featured .timeline-rail::after{top:33px}
+.timeline-item.is-featured:first-child .timeline-rail::before{top:38px}
+.timeline-highlights{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px}
+.timeline-highlights li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--text)}
+.timeline-highlights li::before{content:"";position:absolute;left:2px;top:.68em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.timeline-tags{list-style:none;padding:16px 0 0;margin:18px 0 0;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px}
+.timeline-tags li{font-size:12.5px;font-weight:500;padding:3px 10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)}
 @media (max-width:720px){
   .timeline-item{grid-template-columns:24px minmax(0,1fr)}
   .timeline-rail{grid-column:1;grid-row:1 / span 2}
@@ -174,6 +183,9 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
   .timeline-body{grid-column:2;grid-row:2;padding:8px 0 36px 0}
   .timeline-body h3{font-size:19px}
   .section-intro{margin-bottom:36px}
+  .timeline-item.is-featured .timeline-body{margin:8px 0 36px 0;padding:20px 18px}
+  .timeline-item.is-featured .timeline-date{padding-top:12px}
+  .timeline-item.is-featured .timeline-rail::after{top:18px}
 }
 
 /* ===== Skills ===== */
@@ -198,7 +210,18 @@ body.dark-mode .hero-image img,body.dark-mode .about-image img{border-color:#1E2
 .soft-card i{font-size:17px;color:var(--gold);width:20px;text-align:center}
 .soft-card p{font-size:15px;font-weight:500;text-align:left;color:var(--heading)}
 .soft-card:hover{border-color:rgba(185,154,99,.6);box-shadow:var(--shadow)}
-@media(max-width:1000px){.skills-container{grid-template-columns:1fr}}
+@media(max-width:1000px){.skills-container{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.skills-container{grid-template-columns:1fr}}
+.skill-logo{width:16px;height:16px;object-fit:contain;flex:none}
+.dark-mode .skill-logo.mono{filter:invert(1) brightness(1.1)}
+.tech-competencies{padding-bottom:90px}
+.competencies-intro{text-align:center;color:var(--text-soft);font-size:16px;margin:-24px auto 32px;max-width:60ch}
+.competency-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;max-width:900px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:10px 28px;box-shadow:var(--shadow-sm)}
+.competency-list li{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);font-size:15px;font-weight:500;color:var(--heading)}
+.competency-list li:nth-last-child(-n+2){border-bottom:0}
+.competency-list i{color:var(--gold);font-size:13px;width:16px;text-align:center}
+@media(max-width:700px){.competency-list{grid-template-columns:1fr;padding:6px 20px}.competency-list li:nth-last-child(2){border-bottom:1px solid var(--border)}}
+
 
 /* ===== Projects ===== */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:0}
@@ -442,14 +465,26 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
       <p class="section-intro">Work, formal study and professional training, most recent first.</p>
 
       <ol class="timeline">
-        <li class="timeline-item is-current">
+        <li class="timeline-item is-current is-featured">
           <div class="timeline-date">Sep 2026 – Present</div>
           <div class="timeline-rail" aria-hidden="true"></div>
           <div class="timeline-body">
-            <span class="timeline-type">Internship, current</span>
+            <span class="timeline-type">Software development, current</span>
             <h3>Full-Stack Developer Intern</h3>
-            <p class="timeline-org">Mavis Strategic Partners</p>
-            <p>Contributing to live company and client projects as a full-stack developer while growing my skills in a professional environment. Developed the company's MSP dashboard, implemented updates and improvements across client websites and projects, and managed website tracking pixels through cPanel.</p>
+            <p class="timeline-org">Mavis Strategic Partners (MSP)</p>
+            <p>Developing the MSP Company Operations and Performance Dashboard, an internal business management system
+              that supports the company's day-to-day operations across departments.</p>
+            <ul class="timeline-highlights">
+              <li>Build frontend and backend functionality using Python, Flask and JavaScript/React.</li>
+              <li>Develop employee portals and role-specific dashboards, with user management and access control.</li>
+              <li>Design, integrate and manage the application's database.</li>
+              <li>Deliver HR, Finance, Administration and departmental functionality that improves business workflows and operational processes.</li>
+              <li>Test, debug and maintain application functionality.</li>
+              <li>Implement updates and improvements across client websites and projects, including managing website tracking pixels through cPanel.</li>
+            </ul>
+            <ul class="timeline-tags" aria-label="Technologies used">
+              <li>Python</li><li>Flask</li><li>JavaScript</li><li>React</li><li>cPanel</li>
+            </ul>
           </div>
         </li>
 
@@ -570,7 +605,29 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
-        <!-- Group 2: Database & infrastructure -->
+        <!-- Group 2: Frameworks & libraries -->
+        <div class="skill-group">
+          <h3>Frameworks &amp; Libraries</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/flask.svg" alt="" width="16" height="16" loading="lazy"><span>Flask</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/laravel.svg" alt="" width="16" height="16" loading="lazy"><span>Laravel</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/spring.svg" alt="" width="16" height="16" loading="lazy"><span>Spring Boot</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/bootstrap.svg" alt="" width="16" height="16" loading="lazy"><span>Bootstrap</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/tailwindcss.svg" alt="" width="16" height="16" loading="lazy"><span>Tailwind CSS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: Database & infrastructure -->
         <div class="skill-group">
           <h3>Database &amp; Systems</h3>
           <div class="hex-grid">
@@ -581,6 +638,9 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
               <div class="hex-inner"><i class="fas fa-server"></i><span>SQL Server</span></div>
             </div>
             <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/sqlite.svg" alt="" width="16" height="16" loading="lazy"><span>SQLite</span></div>
+            </div>
+            <div class="hex">
               <div class="hex-inner"><i class="fab fa-linux"></i><span>Linux</span></div>
             </div>
             <div class="hex">
@@ -589,18 +649,61 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
-        <!-- Group 3: Tools & Certs -->
+        <!-- Group 4: Backend engineering -->
         <div class="skill-group">
-          <h3>Professional Tools</h3>
+          <h3>Backend Engineering</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-code"></i><span>RESTful APIs</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-diagram-project"></i><span>Database Design</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-table"></i><span>CRUD Operations</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-user-lock"></i><span>Authentication &amp; Authorisation</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-user-shield"></i><span>Role-Based Access Control (RBAC)</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-plug"></i><span>Backend Integration</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 5: Tools & deployment -->
+        <div class="skill-group">
+          <h3>Tools &amp; Deployment</h3>
           <div class="hex-grid">
             <div class="hex">
               <div class="hex-inner"><i class="fab fa-git-alt"></i><span>Git</span></div>
             </div>
             <div class="hex">
-              <div class="hex-inner"><i class="fas fa-code"></i><span>APIs</span></div>
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/github.svg" alt="" width="16" height="16" loading="lazy"><span>GitHub</span></div>
             </div>
             <div class="hex">
-              <div class="hex-inner"><i class="fas fa-pencil-ruler"></i><span>Figma</span></div>
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/vscode.svg" alt="" width="16" height="16" loading="lazy"><span>Visual Studio Code</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/intellij.svg" alt="" width="16" height="16" loading="lazy"><span>IntelliJ IDEA</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/netbeans.svg" alt="" width="16" height="16" loading="lazy"><span>NetBeans</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/postman.svg" alt="" width="16" height="16" loading="lazy"><span>Postman</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fab fa-figma"></i><span>Figma</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo mono" src="images/icons/vercel.svg" alt="" width="16" height="16" loading="lazy"><span>Vercel</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><img class="skill-logo" src="images/icons/netlify.svg" alt="" width="16" height="16" loading="lazy"><span>Netlify</span></div>
             </div>
             <div class="hex">
               <div class="hex-inner"><i class="fas fa-tools"></i><span>IT Support</span></div>
@@ -608,9 +711,46 @@ footer .logo{color:#F7F6F2;border-color:var(--gold)}
           </div>
         </div>
 
+        <!-- Group 6: AI & emerging technologies -->
+        <div class="skill-group">
+          <h3>AI &amp; Emerging Technologies</h3>
+          <div class="hex-grid">
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-wand-magic-sparkles"></i><span>AI Prompt Engineering</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-robot"></i><span>Generative AI Tools</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-laptop-code"></i><span>AI-Assisted Development</span></div>
+            </div>
+            <div class="hex">
+              <div class="hex-inner"><i class="fas fa-gears"></i><span>AI Workflow Automation</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
+
+    <!-- Technical Competencies -->
+    <div class="soft-skills-section tech-competencies">
+      <h2>Technical Competencies</h2>
+      <p class="competencies-intro">Practical software engineering skills developed through real-world projects and professional work.</p>
+      <ul class="competency-list">
+        <li><i class="fas fa-check" aria-hidden="true"></i> Full-Stack Web Application Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Dashboard Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Database Management and Integration</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> User Management Systems</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Role-Based Dashboard Development</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Workflow Automation</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> System Troubleshooting and Maintenance</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> UI/UX Implementation</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Application Testing and Debugging</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Software Documentation</li>
+      </ul>
+    </div>
 
     <!-- Soft Skills -->
     <div class="soft-skills-section">
